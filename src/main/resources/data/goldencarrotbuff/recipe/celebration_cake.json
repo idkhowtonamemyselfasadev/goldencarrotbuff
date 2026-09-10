@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "gcb_food",
+  "pattern": [
+    "SMS",
+    "EGE",
+    "WWW"
+  ],
+  "key": {
+    "S": "minecraft:sugar",
+    "M": "minecraft:milk_bucket",
+    "E": "minecraft:egg",
+    "G": "minecraft:golden_apple",
+    "W": "minecraft:wheat"
+  },
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "celebration_cake"
+      },
+      "minecraft:item_name": "Celebration Cake",
+      "minecraft:item_model": "goldencarrotbuff:celebration_cake",
+      "minecraft:lore": [
+        {
+          "text": "Someone did something worth celebrating.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "epic",
+      "minecraft:food": {
+        "nutrition": 12,
+        "saturation": 16.0,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:regeneration",
+                "duration": 200,
+                "amplifier": 0
+              },
+              {
+                "id": "minecraft:absorption",
+                "duration": 1200,
+                "amplifier": 0
+              },
+              {
+                "id": "minecraft:speed",
+                "duration": 600,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

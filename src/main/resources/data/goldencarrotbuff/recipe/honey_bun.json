@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:bread",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "honey_bun"
+      },
+      "minecraft:item_name": "Honey Bun",
+      "minecraft:item_model": "goldencarrotbuff:honey_bun",
+      "minecraft:lore": [
+        {
+          "text": "Sticky enough to glue a villager's mouth shut.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 7,
+        "saturation": 9.6,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

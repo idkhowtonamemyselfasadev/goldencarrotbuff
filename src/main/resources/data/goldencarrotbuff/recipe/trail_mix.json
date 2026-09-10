@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:pumpkin_seeds",
+    "minecraft:melon_seeds",
+    "minecraft:sweet_berries",
+    "minecraft:dried_kelp"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 2,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "trail_mix"
+      },
+      "minecraft:item_name": "Trail Mix",
+      "minecraft:item_model": "goldencarrotbuff:trail_mix",
+      "minecraft:lore": [
+        {
+          "text": "Seeds, berries, and something unidentifiable.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation": 4.8,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

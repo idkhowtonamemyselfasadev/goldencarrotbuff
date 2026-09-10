@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:prismarine_crystals",
+    "minecraft:sea_pickle",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "ocean_breeze"
+      },
+      "minecraft:item_name": "Ocean Breeze",
+      "minecraft:item_model": "goldencarrotbuff:ocean_breeze",
+      "minecraft:lore": [
+        {
+          "text": "Salt, spray, and a hint of pickle.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "uncommon",
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation": 4.8,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "drink",
+        "sound": "minecraft:entity.generic.drink",
+        "has_consume_particles": false,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:dolphins_grace",
+                "duration": 600,
+                "amplifier": 0
+              },
+              {
+                "id": "minecraft:water_breathing",
+                "duration": 600,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:glass_bottle",
+        "count": 1
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

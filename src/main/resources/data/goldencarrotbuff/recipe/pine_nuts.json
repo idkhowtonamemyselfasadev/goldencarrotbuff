@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:spruce_sapling",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 3,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "pine_nuts"
+      },
+      "minecraft:item_name": "Pine Nuts",
+      "minecraft:item_model": "goldencarrotbuff:pine_nuts",
+      "minecraft:lore": [
+        {
+          "text": "Pried out of a cone one by one.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 3.6,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

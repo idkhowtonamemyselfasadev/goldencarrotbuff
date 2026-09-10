@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:milk_bucket",
+    "minecraft:milk_bucket",
+    "minecraft:egg"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 2,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "cheese_wheel"
+      },
+      "minecraft:item_name": "Cheese Wheel",
+      "minecraft:item_model": "goldencarrotbuff:cheese_wheel",
+      "minecraft:lore": [
+        {
+          "text": "Aged in a cellar nobody remembers digging.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 7,
+        "saturation": 9.6,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:wheat",
+    "minecraft:milk_bucket",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "mushroom_risotto"
+      },
+      "minecraft:item_name": "Mushroom Risotto",
+      "minecraft:item_model": "goldencarrotbuff:mushroom_risotto",
+      "minecraft:lore": [
+        {
+          "text": "Stirred for an hour by a very patient cook.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 9,
+        "saturation": 12.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:bowl",
+        "count": 1
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

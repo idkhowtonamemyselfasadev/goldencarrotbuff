@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "gcb_food",
+  "pattern": [
+    "CMC",
+    "SES",
+    "WWW"
+  ],
+  "key": {
+    "C": "minecraft:carrot",
+    "M": "minecraft:milk_bucket",
+    "S": "minecraft:sugar",
+    "E": "minecraft:egg",
+    "W": "minecraft:wheat"
+  },
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "carrot_cake"
+      },
+      "minecraft:item_name": "Carrot Cake",
+      "minecraft:item_model": "goldencarrotbuff:carrot_cake",
+      "minecraft:lore": [
+        {
+          "text": "Vegetables count if there is frosting.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "uncommon",
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation": 12.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:haste",
+                "duration": 600,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

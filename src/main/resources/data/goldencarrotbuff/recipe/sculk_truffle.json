@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:echo_shard",
+    "minecraft:brown_mushroom",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "sculk_truffle"
+      },
+      "minecraft:item_name": "Sculk Truffle",
+      "minecraft:item_model": "goldencarrotbuff:sculk_truffle",
+      "minecraft:lore": [
+        {
+          "text": "Dug up where nothing should grow.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "epic",
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation": 9.6,
+        "can_always_eat": true
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:resistance",
+                "duration": 300,
+                "amplifier": 0
+              },
+              {
+                "id": "minecraft:strength",
+                "duration": 300,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}
