@@ -28,6 +28,11 @@ import zipfile
 from PIL import Image
 
 from foods import FOODS
+import voxel
+
+# "voxel": rounded 3D models sculpted from spheres, tori and cylinders (voxel.py).
+# "sprite": flat 16x16 pixel-art sprites extruded by the game like vanilla items.
+STYLE = "voxel"
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PACK = os.path.join(ROOT, "pack")
@@ -654,16 +659,27 @@ def main():
         "max_format": [PACK_FORMAT, 99],
         "description": "GoldenCarrotBuff: sprites for the 100 foods"}})
 
+    elements = 0
     for f in FOODS:
         fid = f["id"]
         tex_path = os.path.join(ASSETS, "textures", "item", fid + ".png")
         os.makedirs(os.path.dirname(tex_path), exist_ok=True)
-        sprite(fid).save(tex_path)
-        # item/generated: the sprite extruded into a thin 3D item, like every vanilla food.
-        dump(os.path.join(ASSETS, "models", "item", fid + ".json"),
-             {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{fid}"}})
+        if STYLE == "voxel":
+            shape, main, second, accent, dark = LOOKS[fid]
+            colours = {"main": rgb(main), "second": rgb(second), "accent": rgb(accent), "dark": rgb(dark)}
+            model, tex, n = voxel.build(fid, shape, colours)
+            elements += n
+            tex.save(tex_path)
+            dump(os.path.join(ASSETS, "models", "item", fid + ".json"), model)
+        else:
+            sprite(fid).save(tex_path)
+            # item/generated: the sprite extruded into a thin 3D item, like every vanilla food.
+            dump(os.path.join(ASSETS, "models", "item", fid + ".json"),
+                 {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{fid}"}})
         dump(os.path.join(ASSETS, "items", fid + ".json"),
              {"model": {"type": "minecraft:model", "model": f"{NS}:item/{fid}"}})
+    if STYLE == "voxel":
+        print(f"{elements} cuboids in total, {elements // len(FOODS)} per model on average")
 
     os.makedirs(os.path.dirname(ZIP), exist_ok=True)
     with zipfile.ZipFile(ZIP, "w", zipfile.ZIP_DEFLATED) as z:
