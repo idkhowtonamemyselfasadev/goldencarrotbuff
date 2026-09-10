@@ -1,5 +1,7 @@
 # GoldenCarrotBuff (Fabric mod)
 
+![GoldenCarrotBuff banner](release/banner.png)
+
 Golden carrots and golden apples retuned, plus **100 new foods** to find, craft
 and eat, on a **Fabric 1.21.11 server**. Players install nothing.
 
