@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:cookie",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 4,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "chocolate_chip_cookie"
+      },
+      "minecraft:item_name": "Chocolate Chip Cookie",
+      "minecraft:item_model": "goldencarrotbuff:chocolate_chip_cookie",
+      "minecraft:lore": [
+        {
+          "text": "The chips are the good part.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 2.4,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

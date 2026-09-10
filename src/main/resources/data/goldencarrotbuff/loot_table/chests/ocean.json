@@ -1,0 +1,564 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.6
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "fish_and_chips"
+                },
+                "minecraft:item_name": "Fish and Chips",
+                "minecraft:item_model": "goldencarrotbuff:fish_and_chips",
+                "minecraft:lore": [
+                  {
+                    "text": "Wrapped in yesterday's map.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 9,
+                  "saturation": 12.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": []
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "salmon_sushi"
+                },
+                "minecraft:item_name": "Salmon Sushi",
+                "minecraft:item_model": "goldencarrotbuff:salmon_sushi",
+                "minecraft:lore": [
+                  {
+                    "text": "Rolled tight with kelp.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:water_breathing",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "reef_roll"
+                },
+                "minecraft:item_name": "Reef Roll",
+                "minecraft:item_model": "goldencarrotbuff:reef_roll",
+                "minecraft:lore": [
+                  {
+                    "text": "Every colour of the reef in one bite.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 5,
+                  "saturation": 6.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:dolphins_grace",
+                          "duration": 400,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "miso_soup"
+                },
+                "minecraft:item_name": "Miso Soup",
+                "minecraft:item_model": "goldencarrotbuff:miso_soup",
+                "minecraft:lore": [
+                  {
+                    "text": "Kelp, sea pickle, and patience.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:water_breathing",
+                          "duration": 400,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:bowl",
+                  "count": 1
+                },
+                "minecraft:max_stack_size": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "seagrass_salad"
+                },
+                "minecraft:item_name": "Seagrass Salad",
+                "minecraft:item_model": "goldencarrotbuff:seagrass_salad",
+                "minecraft:lore": [
+                  {
+                    "text": "Tastes like the tide.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 5,
+                  "saturation": 6.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:dolphins_grace",
+                          "duration": 300,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "glow_squid_skewer"
+                },
+                "minecraft:item_name": "Glow Squid Skewer",
+                "minecraft:item_model": "goldencarrotbuff:glow_squid_skewer",
+                "minecraft:lore": [
+                  {
+                    "text": "Makes you shine. Literally.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:night_vision",
+                          "duration": 400,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:glowing",
+                          "duration": 300,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "nautilus_chowder"
+                },
+                "minecraft:item_name": "Nautilus Chowder",
+                "minecraft:item_model": "goldencarrotbuff:nautilus_chowder",
+                "minecraft:lore": [
+                  {
+                    "text": "Served in the shell.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:food": {
+                  "nutrition": 8,
+                  "saturation": 9.6,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:conduit_power",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:bowl",
+                  "count": 1
+                },
+                "minecraft:max_stack_size": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "seaweed_wrap"
+                },
+                "minecraft:item_name": "Seaweed Wrap",
+                "minecraft:item_model": "goldencarrotbuff:seaweed_wrap",
+                "minecraft:lore": [
+                  {
+                    "text": "Salmon, rolled tight in kelp.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": []
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "ocean_breeze"
+                },
+                "minecraft:item_name": "Ocean Breeze",
+                "minecraft:item_model": "goldencarrotbuff:ocean_breeze",
+                "minecraft:lore": [
+                  {
+                    "text": "Salt, spray, and a hint of pickle.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 4,
+                  "saturation": 4.8,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "drink",
+                  "sound": "minecraft:entity.generic.drink",
+                  "has_consume_particles": false,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:dolphins_grace",
+                          "duration": 600,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:water_breathing",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:glass_bottle",
+                  "count": 1
+                },
+                "minecraft:max_stack_size": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "deep_sea_delicacy"
+                },
+                "minecraft:item_name": "Deep Sea Delicacy",
+                "minecraft:item_model": "goldencarrotbuff:deep_sea_delicacy",
+                "minecraft:lore": [
+                  {
+                    "text": "Only the old guardians know the recipe.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:food": {
+                  "nutrition": 10,
+                  "saturation": 14.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:conduit_power",
+                          "duration": 2400,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:dolphins_grace",
+                          "duration": 1200,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:red_mushroom",
+    "minecraft:brown_mushroom",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 2,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "mushroom_skewer"
+      },
+      "minecraft:item_name": "Mushroom Skewer",
+      "minecraft:item_model": "goldencarrotbuff:mushroom_skewer",
+      "minecraft:lore": [
+        {
+          "text": "Forest floor on a stick.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation": 7.2,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      }
+    }
+  }
+}

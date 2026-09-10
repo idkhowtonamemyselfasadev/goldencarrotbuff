@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:dandelion",
+    "minecraft:ice",
+    "minecraft:glass_bottle"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "dandelion_tea"
+      },
+      "minecraft:item_name": "Dandelion Iced Tea",
+      "minecraft:item_model": "goldencarrotbuff:dandelion_tea",
+      "minecraft:lore": [
+        {
+          "text": "Brewed from weeds, and proud of it.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 2.4,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "drink",
+        "sound": "minecraft:entity.generic.drink",
+        "has_consume_particles": false,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:speed",
+                "duration": 200,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:glass_bottle",
+        "count": 1
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

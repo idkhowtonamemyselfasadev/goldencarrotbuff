@@ -1,0 +1,54 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:sugar",
+    "minecraft:stick",
+    "minecraft:purple_dye"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 2,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "purple_lollipop"
+      },
+      "minecraft:item_name": "Purple Lollipop",
+      "minecraft:item_model": "goldencarrotbuff:purple_lollipop",
+      "minecraft:lore": [
+        {
+          "text": "Grape flavoured luck.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation": 2.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:luck",
+                "duration": 1200,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

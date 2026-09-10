@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:beetroot",
+    "minecraft:beetroot",
+    "minecraft:sugar",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "tomato_soup"
+      },
+      "minecraft:item_name": "Tomato Soup",
+      "minecraft:item_model": "goldencarrotbuff:tomato_soup",
+      "minecraft:lore": [
+        {
+          "text": "Red, warm, and suspiciously beetroot-flavoured.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation": 7.2,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": []
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:bowl",
+        "count": 1
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

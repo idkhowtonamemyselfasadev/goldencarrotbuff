@@ -1,0 +1,554 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.6
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "carrot_cake"
+                },
+                "minecraft:item_name": "Carrot Cake",
+                "minecraft:item_model": "goldencarrotbuff:carrot_cake",
+                "minecraft:lore": [
+                  {
+                    "text": "Vegetables count if there is frosting.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 10,
+                  "saturation": 12.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:haste",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "meat_lovers_pizza"
+                },
+                "minecraft:item_name": "Meat Lovers Pizza",
+                "minecraft:item_model": "goldencarrotbuff:meat_lovers_pizza",
+                "minecraft:lore": [
+                  {
+                    "text": "Three meats. No regrets.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 10,
+                  "saturation": 14.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": []
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "golden_roast"
+                },
+                "minecraft:item_name": "Golden Roast",
+                "minecraft:item_model": "goldencarrotbuff:golden_roast",
+                "minecraft:lore": [
+                  {
+                    "text": "Glazed with actual gold.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:food": {
+                  "nutrition": 10,
+                  "saturation": 14.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:absorption",
+                          "duration": 600,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:regeneration",
+                          "duration": 100,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "popcorn"
+                },
+                "minecraft:item_name": "Popcorn",
+                "minecraft:item_model": "goldencarrotbuff:popcorn",
+                "minecraft:lore": [
+                  {
+                    "text": "Half of it ends up on the floor.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 3,
+                  "saturation": 2.4,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": []
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "mushroom_skewer"
+                },
+                "minecraft:item_name": "Mushroom Skewer",
+                "minecraft:item_model": "goldencarrotbuff:mushroom_skewer",
+                "minecraft:lore": [
+                  {
+                    "text": "Forest floor on a stick.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": []
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "golden_milk"
+                },
+                "minecraft:item_name": "Golden Milk",
+                "minecraft:item_model": "goldencarrotbuff:golden_milk",
+                "minecraft:lore": [
+                  {
+                    "text": "Shimmers when you swirl it.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "drink",
+                  "sound": "minecraft:entity.generic.drink",
+                  "has_consume_particles": false,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:absorption",
+                          "duration": 1200,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:regeneration",
+                          "duration": 100,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:glass_bottle",
+                  "count": 1
+                },
+                "minecraft:max_stack_size": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "coffee"
+                },
+                "minecraft:item_name": "Coffee",
+                "minecraft:item_model": "goldencarrotbuff:coffee",
+                "minecraft:lore": [
+                  {
+                    "text": "The mine digs itself.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 3,
+                  "saturation": 2.4,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "drink",
+                  "sound": "minecraft:entity.generic.drink",
+                  "has_consume_particles": false,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:speed",
+                          "duration": 600,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:haste",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:glass_bottle",
+                  "count": 1
+                },
+                "minecraft:max_stack_size": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "phantom_pudding"
+                },
+                "minecraft:item_name": "Phantom Pudding",
+                "minecraft:item_model": "goldencarrotbuff:phantom_pudding",
+                "minecraft:lore": [
+                  {
+                    "text": "Light as air. Lighter, actually.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:slow_falling",
+                          "duration": 1200,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:night_vision",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "resin_toffee"
+                },
+                "minecraft:item_name": "Resin Toffee",
+                "minecraft:item_model": "goldencarrotbuff:resin_toffee",
+                "minecraft:lore": [
+                  {
+                    "text": "Chewy, amber, and faintly creaky.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 5,
+                  "saturation": 6.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:haste",
+                          "duration": 1200,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "celebration_cake"
+                },
+                "minecraft:item_name": "Celebration Cake",
+                "minecraft:item_model": "goldencarrotbuff:celebration_cake",
+                "minecraft:lore": [
+                  {
+                    "text": "Someone did something worth celebrating.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:food": {
+                  "nutrition": 12,
+                  "saturation": 16.0,
+                  "can_always_eat": true
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:regeneration",
+                          "duration": 200,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:absorption",
+                          "duration": 1200,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:speed",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

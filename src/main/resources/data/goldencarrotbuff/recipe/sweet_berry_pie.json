@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:sweet_berries",
+    "minecraft:sweet_berries",
+    "minecraft:sugar",
+    "minecraft:egg",
+    "minecraft:wheat"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "sweet_berry_pie"
+      },
+      "minecraft:item_name": "Sweet Berry Pie",
+      "minecraft:item_model": "goldencarrotbuff:sweet_berry_pie",
+      "minecraft:lore": [
+        {
+          "text": "Worth every thorn.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation": 9.6,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:regeneration",
+                "duration": 100,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

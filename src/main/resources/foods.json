@@ -1,0 +1,4840 @@
+{
+  "foods": [
+    {
+      "id": "blueberry_muffin",
+      "name": "Blueberry Muffin",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "blueberry_muffin"
+          },
+          "minecraft:item_name": "Blueberry Muffin",
+          "minecraft:item_model": "goldencarrotbuff:blueberry_muffin",
+          "minecraft:lore": [
+            {
+              "text": "Fluffy, warm, and bursting with berries.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "honey_bun",
+      "name": "Honey Bun",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "honey_bun"
+          },
+          "minecraft:item_name": "Honey Bun",
+          "minecraft:item_model": "goldencarrotbuff:honey_bun",
+          "minecraft:lore": [
+            {
+              "text": "Sticky enough to glue a villager's mouth shut.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "cinnamon_roll",
+      "name": "Cinnamon Roll",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cinnamon_roll"
+          },
+          "minecraft:item_name": "Cinnamon Roll",
+          "minecraft:item_model": "goldencarrotbuff:cinnamon_roll",
+          "minecraft:lore": [
+            {
+              "text": "Still warm from the oven.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 8.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "chocolate_chip_cookie",
+      "name": "Chocolate Chip Cookie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "chocolate_chip_cookie"
+          },
+          "minecraft:item_name": "Chocolate Chip Cookie",
+          "minecraft:item_model": "goldencarrotbuff:chocolate_chip_cookie",
+          "minecraft:lore": [
+            {
+              "text": "The chips are the good part.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "pumpkin_bread",
+      "name": "Pumpkin Bread",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "pumpkin_bread"
+          },
+          "minecraft:item_name": "Pumpkin Bread",
+          "minecraft:item_model": "goldencarrotbuff:pumpkin_bread",
+          "minecraft:lore": [
+            {
+              "text": "Autumn in a loaf.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "carrot_cake",
+      "name": "Carrot Cake",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "carrot_cake"
+          },
+          "minecraft:item_name": "Carrot Cake",
+          "minecraft:item_model": "goldencarrotbuff:carrot_cake",
+          "minecraft:lore": [
+            {
+              "text": "Vegetables count if there is frosting.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:haste",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "chocolate_cake_slice",
+      "name": "Chocolate Cake Slice",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "chocolate_cake_slice"
+          },
+          "minecraft:item_name": "Chocolate Cake Slice",
+          "minecraft:item_model": "goldencarrotbuff:chocolate_cake_slice",
+          "minecraft:lore": [
+            {
+              "text": "One slice. Maybe two.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "apple_pie",
+      "name": "Apple Pie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "apple_pie"
+          },
+          "minecraft:item_name": "Apple Pie",
+          "minecraft:item_model": "goldencarrotbuff:apple_pie",
+          "minecraft:lore": [
+            {
+              "text": "Best served with a view.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "sweet_berry_pie",
+      "name": "Sweet Berry Pie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "sweet_berry_pie"
+          },
+          "minecraft:item_name": "Sweet Berry Pie",
+          "minecraft:item_model": "goldencarrotbuff:sweet_berry_pie",
+          "minecraft:lore": [
+            {
+              "text": "Worth every thorn.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "glow_berry_tart",
+      "name": "Glow Berry Tart",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "glow_berry_tart"
+          },
+          "minecraft:item_name": "Glow Berry Tart",
+          "minecraft:item_model": "goldencarrotbuff:glow_berry_tart",
+          "minecraft:lore": [
+            {
+              "text": "Faintly glows in the dark.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "cheese_wheel",
+      "name": "Cheese Wheel",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cheese_wheel"
+          },
+          "minecraft:item_name": "Cheese Wheel",
+          "minecraft:item_model": "goldencarrotbuff:cheese_wheel",
+          "minecraft:lore": [
+            {
+              "text": "Aged in a cellar nobody remembers digging.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "toast_with_jam",
+      "name": "Toast with Jam",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "toast_with_jam"
+          },
+          "minecraft:item_name": "Toast with Jam",
+          "minecraft:item_model": "goldencarrotbuff:toast_with_jam",
+          "minecraft:lore": [
+            {
+              "text": "Lands jam side down every time.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "croissant",
+      "name": "Croissant",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "croissant"
+          },
+          "minecraft:item_name": "Croissant",
+          "minecraft:item_model": "goldencarrotbuff:croissant",
+          "minecraft:lore": [
+            {
+              "text": "Flaky. Buttery. Gone in seconds.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "bagel",
+      "name": "Bagel",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "bagel"
+          },
+          "minecraft:item_name": "Bagel",
+          "minecraft:item_model": "goldencarrotbuff:bagel",
+          "minecraft:lore": [
+            {
+              "text": "A bread with a hole in its heart.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "wagyu_steak",
+      "name": "Wagyu Steak",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "wagyu_steak"
+          },
+          "minecraft:item_name": "Wagyu Steak",
+          "minecraft:item_model": "goldencarrotbuff:wagyu_steak",
+          "minecraft:lore": [
+            {
+              "text": "Marbled like a museum floor.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 16.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "bacon",
+      "name": "Bacon",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "bacon"
+          },
+          "minecraft:item_name": "Bacon",
+          "minecraft:item_model": "goldencarrotbuff:bacon",
+          "minecraft:lore": [
+            {
+              "text": "Crispy strips of joy.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "bacon_and_eggs",
+      "name": "Bacon and Eggs",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "bacon_and_eggs"
+          },
+          "minecraft:item_name": "Bacon and Eggs",
+          "minecraft:item_model": "goldencarrotbuff:bacon_and_eggs",
+          "minecraft:lore": [
+            {
+              "text": "The only correct breakfast.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "chicken_nuggets",
+      "name": "Chicken Nuggets",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "chicken_nuggets"
+          },
+          "minecraft:item_name": "Chicken Nuggets",
+          "minecraft:item_model": "goldencarrotbuff:chicken_nuggets",
+          "minecraft:lore": [
+            {
+              "text": "Shaped like nothing in particular.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 3.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "fried_chicken",
+      "name": "Fried Chicken",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "fried_chicken"
+          },
+          "minecraft:item_name": "Fried Chicken",
+          "minecraft:item_model": "goldencarrotbuff:fried_chicken",
+          "minecraft:lore": [
+            {
+              "text": "Eleven herbs. Twelve, if you count the dirt.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "roast_lamb",
+      "name": "Roast Lamb",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "roast_lamb"
+          },
+          "minecraft:item_name": "Roast Lamb",
+          "minecraft:item_model": "goldencarrotbuff:roast_lamb",
+          "minecraft:lore": [
+            {
+              "text": "Sunday dinner, any day of the week.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "rabbit_pie",
+      "name": "Rabbit Pie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "rabbit_pie"
+          },
+          "minecraft:item_name": "Rabbit Pie",
+          "minecraft:item_model": "goldencarrotbuff:rabbit_pie",
+          "minecraft:lore": [
+            {
+              "text": "You will feel a spring in your step.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 400,
+                    "amplifier": 1
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "fish_and_chips",
+      "name": "Fish and Chips",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "fish_and_chips"
+          },
+          "minecraft:item_name": "Fish and Chips",
+          "minecraft:item_model": "goldencarrotbuff:fish_and_chips",
+          "minecraft:lore": [
+            {
+              "text": "Wrapped in yesterday's map.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "salmon_sushi",
+      "name": "Salmon Sushi",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "salmon_sushi"
+          },
+          "minecraft:item_name": "Salmon Sushi",
+          "minecraft:item_model": "goldencarrotbuff:salmon_sushi",
+          "minecraft:lore": [
+            {
+              "text": "Rolled tight with kelp.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "reef_roll",
+      "name": "Reef Roll",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "reef_roll"
+          },
+          "minecraft:item_name": "Reef Roll",
+          "minecraft:item_model": "goldencarrotbuff:reef_roll",
+          "minecraft:lore": [
+            {
+              "text": "Every colour of the reef in one bite.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:dolphins_grace",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "meat_lovers_pizza",
+      "name": "Meat Lovers Pizza",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "meat_lovers_pizza"
+          },
+          "minecraft:item_name": "Meat Lovers Pizza",
+          "minecraft:item_model": "goldencarrotbuff:meat_lovers_pizza",
+          "minecraft:lore": [
+            {
+              "text": "Three meats. No regrets.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 14.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "veggie_stir_fry",
+      "name": "Veggie Stir Fry",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "veggie_stir_fry"
+          },
+          "minecraft:item_name": "Veggie Stir Fry",
+          "minecraft:item_model": "goldencarrotbuff:veggie_stir_fry",
+          "minecraft:lore": [
+            {
+              "text": "Tossed hot and fast.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "shepherds_pie",
+      "name": "Shepherd's Pie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "shepherds_pie"
+          },
+          "minecraft:item_name": "Shepherd's Pie",
+          "minecraft:item_model": "goldencarrotbuff:shepherds_pie",
+          "minecraft:lore": [
+            {
+              "text": "Mash on top, comfort underneath.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 14.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:resistance",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "hearty_stew",
+      "name": "Hearty Stew",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "hearty_stew"
+          },
+          "minecraft:item_name": "Hearty Stew",
+          "minecraft:item_model": "goldencarrotbuff:hearty_stew",
+          "minecraft:lore": [
+            {
+              "text": "Sticks to your ribs.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 12,
+            "saturation": 16.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "baked_beans",
+      "name": "Baked Beans",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "baked_beans"
+          },
+          "minecraft:item_name": "Baked Beans",
+          "minecraft:item_model": "goldencarrotbuff:baked_beans",
+          "minecraft:lore": [
+            {
+              "text": "Simmered slow in sweet sauce.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "loaded_potato",
+      "name": "Loaded Potato",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "loaded_potato"
+          },
+          "minecraft:item_name": "Loaded Potato",
+          "minecraft:item_model": "goldencarrotbuff:loaded_potato",
+          "minecraft:lore": [
+            {
+              "text": "Bacon, cheese, and more bacon.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "mushroom_risotto",
+      "name": "Mushroom Risotto",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "mushroom_risotto"
+          },
+          "minecraft:item_name": "Mushroom Risotto",
+          "minecraft:item_model": "goldencarrotbuff:mushroom_risotto",
+          "minecraft:lore": [
+            {
+              "text": "Stirred for an hour by a very patient cook.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "golden_roast",
+      "name": "Golden Roast",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "golden_roast"
+          },
+          "minecraft:item_name": "Golden Roast",
+          "minecraft:item_model": "goldencarrotbuff:golden_roast",
+          "minecraft:lore": [
+            {
+              "text": "Glazed with actual gold.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 14.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:absorption",
+                    "duration": 600,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "tomato_soup",
+      "name": "Tomato Soup",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "tomato_soup"
+          },
+          "minecraft:item_name": "Tomato Soup",
+          "minecraft:item_model": "goldencarrotbuff:tomato_soup",
+          "minecraft:lore": [
+            {
+              "text": "Red, warm, and suspiciously beetroot-flavoured.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "chicken_noodle_soup",
+      "name": "Chicken Noodle Soup",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "chicken_noodle_soup"
+          },
+          "minecraft:item_name": "Chicken Noodle Soup",
+          "minecraft:item_model": "goldencarrotbuff:chicken_noodle_soup",
+          "minecraft:lore": [
+            {
+              "text": "Cures colds and bad moods.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 60,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "pumpkin_soup",
+      "name": "Pumpkin Soup",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "pumpkin_soup"
+          },
+          "minecraft:item_name": "Pumpkin Soup",
+          "minecraft:item_model": "goldencarrotbuff:pumpkin_soup",
+          "minecraft:lore": [
+            {
+              "text": "Smooth and a little sweet.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 8.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "fish_chowder",
+      "name": "Fish Chowder",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "fish_chowder"
+          },
+          "minecraft:item_name": "Fish Chowder",
+          "minecraft:item_model": "goldencarrotbuff:fish_chowder",
+          "minecraft:lore": [
+            {
+              "text": "Thick enough to stand a spoon in.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "miso_soup",
+      "name": "Miso Soup",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "miso_soup"
+          },
+          "minecraft:item_name": "Miso Soup",
+          "minecraft:item_model": "goldencarrotbuff:miso_soup",
+          "minecraft:lore": [
+            {
+              "text": "Kelp, sea pickle, and patience.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "spicy_chili",
+      "name": "Spicy Chili",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "spicy_chili"
+          },
+          "minecraft:item_name": "Spicy Chili",
+          "minecraft:item_model": "goldencarrotbuff:spicy_chili",
+          "minecraft:lore": [
+            {
+              "text": "Hot enough to walk through lava. Briefly.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 9,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 300,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "bone_broth",
+      "name": "Bone Broth",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "bone_broth"
+          },
+          "minecraft:item_name": "Bone Broth",
+          "minecraft:item_model": "goldencarrotbuff:bone_broth",
+          "minecraft:lore": [
+            {
+              "text": "Don't ask whose bones.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:resistance",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "blaze_stew",
+      "name": "Blaze Stew",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "blaze_stew"
+          },
+          "minecraft:item_name": "Blaze Stew",
+          "minecraft:item_model": "goldencarrotbuff:blaze_stew",
+          "minecraft:lore": [
+            {
+              "text": "Served at exactly one temperature: too hot.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 1200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "caramel_apple",
+      "name": "Caramel Apple",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "caramel_apple"
+          },
+          "minecraft:item_name": "Caramel Apple",
+          "minecraft:item_model": "goldencarrotbuff:caramel_apple",
+          "minecraft:lore": [
+            {
+              "text": "Sticky on the outside, crunchy inside.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "candied_carrot",
+      "name": "Candied Carrot",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "candied_carrot"
+          },
+          "minecraft:item_name": "Candied Carrot",
+          "minecraft:item_model": "goldencarrotbuff:candied_carrot",
+          "minecraft:lore": [
+            {
+              "text": "Good for the eyes, apparently.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "gummy_slime",
+      "name": "Gummy Slime",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "gummy_slime"
+          },
+          "minecraft:item_name": "Gummy Slime",
+          "minecraft:item_model": "goldencarrotbuff:gummy_slime",
+          "minecraft:lore": [
+            {
+              "text": "Bouncy all the way down.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 400,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:slow_falling",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "rock_candy",
+      "name": "Rock Candy",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "rock_candy"
+          },
+          "minecraft:item_name": "Rock Candy",
+          "minecraft:item_model": "goldencarrotbuff:rock_candy",
+          "minecraft:lore": [
+            {
+              "text": "Crystallised sugar, geologist approved.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:haste",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "red_lollipop",
+      "name": "Red Lollipop",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "red_lollipop"
+          },
+          "minecraft:item_name": "Red Lollipop",
+          "minecraft:item_model": "goldencarrotbuff:red_lollipop",
+          "minecraft:lore": [
+            {
+              "text": "Cherry, probably.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "blue_lollipop",
+      "name": "Blue Lollipop",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "blue_lollipop"
+          },
+          "minecraft:item_name": "Blue Lollipop",
+          "minecraft:item_model": "goldencarrotbuff:blue_lollipop",
+          "minecraft:lore": [
+            {
+              "text": "Tastes blue.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "green_lollipop",
+      "name": "Green Lollipop",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "green_lollipop"
+          },
+          "minecraft:item_name": "Green Lollipop",
+          "minecraft:item_model": "goldencarrotbuff:green_lollipop",
+          "minecraft:lore": [
+            {
+              "text": "Lime, or apple, or both.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "purple_lollipop",
+      "name": "Purple Lollipop",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "purple_lollipop"
+          },
+          "minecraft:item_name": "Purple Lollipop",
+          "minecraft:item_model": "goldencarrotbuff:purple_lollipop",
+          "minecraft:lore": [
+            {
+              "text": "Grape flavoured luck.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:luck",
+                    "duration": 1200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "honey_drop",
+      "name": "Honey Drop",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "honey_drop"
+          },
+          "minecraft:item_name": "Honey Drop",
+          "minecraft:item_model": "goldencarrotbuff:honey_drop",
+          "minecraft:lore": [
+            {
+              "text": "A single golden bead.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 2,
+            "saturation": 2.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 60,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "chocolate_bar",
+      "name": "Chocolate Bar",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "chocolate_bar"
+          },
+          "minecraft:item_name": "Chocolate Bar",
+          "minecraft:item_model": "goldencarrotbuff:chocolate_bar",
+          "minecraft:lore": [
+            {
+              "text": "Snaps cleanly along the lines.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 3.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "trail_mix",
+      "name": "Trail Mix",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "trail_mix"
+          },
+          "minecraft:item_name": "Trail Mix",
+          "minecraft:item_model": "goldencarrotbuff:trail_mix",
+          "minecraft:lore": [
+            {
+              "text": "Seeds, berries, and something unidentifiable.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "jerky",
+      "name": "Jerky",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "jerky"
+          },
+          "minecraft:item_name": "Jerky",
+          "minecraft:item_model": "goldencarrotbuff:jerky",
+          "minecraft:lore": [
+            {
+              "text": "Chewy enough to last the whole trip.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "popcorn",
+      "name": "Popcorn",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "popcorn"
+          },
+          "minecraft:item_name": "Popcorn",
+          "minecraft:item_model": "goldencarrotbuff:popcorn",
+          "minecraft:lore": [
+            {
+              "text": "Half of it ends up on the floor.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "rice_ball",
+      "name": "Rice Ball",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "rice_ball"
+          },
+          "minecraft:item_name": "Rice Ball",
+          "minecraft:item_model": "goldencarrotbuff:rice_ball",
+          "minecraft:lore": [
+            {
+              "text": "Wrapped in a strip of kelp.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "dried_apricots",
+      "name": "Dried Apricots",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "dried_apricots"
+          },
+          "minecraft:item_name": "Dried Apricots",
+          "minecraft:item_model": "goldencarrotbuff:dried_apricots",
+          "minecraft:lore": [
+            {
+              "text": "Sun-dried on a hot roof.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "cactus_candy",
+      "name": "Cactus Candy",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cactus_candy"
+          },
+          "minecraft:item_name": "Cactus Candy",
+          "minecraft:item_model": "goldencarrotbuff:cactus_candy",
+          "minecraft:lore": [
+            {
+              "text": "The spines were removed. Mostly.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "cherry_blossom_jam",
+      "name": "Cherry Blossom Jam",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cherry_blossom_jam"
+          },
+          "minecraft:item_name": "Cherry Blossom Jam",
+          "minecraft:item_model": "goldencarrotbuff:cherry_blossom_jam",
+          "minecraft:lore": [
+            {
+              "text": "Pink petals, pressed and sweetened.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "sweet_berry_jam",
+      "name": "Sweet Berry Jam",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "sweet_berry_jam"
+          },
+          "minecraft:item_name": "Sweet Berry Jam",
+          "minecraft:item_model": "goldencarrotbuff:sweet_berry_jam",
+          "minecraft:lore": [
+            {
+              "text": "The fox's favourite.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "glow_berry_jam",
+      "name": "Glow Berry Jam",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "glow_berry_jam"
+          },
+          "minecraft:item_name": "Glow Berry Jam",
+          "minecraft:item_model": "goldencarrotbuff:glow_berry_jam",
+          "minecraft:lore": [
+            {
+              "text": "Lights up the pantry.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "mushroom_skewer",
+      "name": "Mushroom Skewer",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "mushroom_skewer"
+          },
+          "minecraft:item_name": "Mushroom Skewer",
+          "minecraft:item_model": "goldencarrotbuff:mushroom_skewer",
+          "minecraft:lore": [
+            {
+              "text": "Forest floor on a stick.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "pine_nuts",
+      "name": "Pine Nuts",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "pine_nuts"
+          },
+          "minecraft:item_name": "Pine Nuts",
+          "minecraft:item_model": "goldencarrotbuff:pine_nuts",
+          "minecraft:lore": [
+            {
+              "text": "Pried out of a cone one by one.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 3.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "lotus_root",
+      "name": "Lotus Root",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "lotus_root"
+          },
+          "minecraft:item_name": "Lotus Root",
+          "minecraft:item_model": "goldencarrotbuff:lotus_root",
+          "minecraft:lore": [
+            {
+              "text": "Crunchy, with holes all the way through.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "seagrass_salad",
+      "name": "Seagrass Salad",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "seagrass_salad"
+          },
+          "minecraft:item_name": "Seagrass Salad",
+          "minecraft:item_model": "goldencarrotbuff:seagrass_salad",
+          "minecraft:lore": [
+            {
+              "text": "Tastes like the tide.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:dolphins_grace",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "wild_honeycomb",
+      "name": "Wild Honeycomb",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "wild_honeycomb"
+          },
+          "minecraft:item_name": "Wild Honeycomb",
+          "minecraft:item_model": "goldencarrotbuff:wild_honeycomb",
+          "minecraft:lore": [
+            {
+              "text": "Still has a bee's footprint in it.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 60,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "cave_cap",
+      "name": "Glowing Cave Cap",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cave_cap"
+          },
+          "minecraft:item_name": "Glowing Cave Cap",
+          "minecraft:item_model": "goldencarrotbuff:cave_cap",
+          "minecraft:lore": [
+            {
+              "text": "Found where the torches run out.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "warped_fruit",
+      "name": "Warped Fruit",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "warped_fruit"
+          },
+          "minecraft:item_name": "Warped Fruit",
+          "minecraft:item_model": "goldencarrotbuff:warped_fruit",
+          "minecraft:lore": [
+            {
+              "text": "Eat it and see where you end up.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:teleport_randomly",
+                "diameter": 16.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "crimson_fruit",
+      "name": "Crimson Fruit",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "crimson_fruit"
+          },
+          "minecraft:item_name": "Crimson Fruit",
+          "minecraft:item_model": "goldencarrotbuff:crimson_fruit",
+          "minecraft:lore": [
+            {
+              "text": "Pulses faintly. Best not to think about it.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "dragon_fruit",
+      "name": "Dragon Fruit",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "dragon_fruit"
+          },
+          "minecraft:item_name": "Dragon Fruit",
+          "minecraft:item_model": "goldencarrotbuff:dragon_fruit",
+          "minecraft:lore": [
+            {
+              "text": "Grown at the edge of the world.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 8.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:slow_falling",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "grilled_squid",
+      "name": "Grilled Squid",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "grilled_squid"
+          },
+          "minecraft:item_name": "Grilled Squid",
+          "minecraft:item_model": "goldencarrotbuff:grilled_squid",
+          "minecraft:lore": [
+            {
+              "text": "Charred tentacles on a stick.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "glow_squid_skewer",
+      "name": "Glow Squid Skewer",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "glow_squid_skewer"
+          },
+          "minecraft:item_name": "Glow Squid Skewer",
+          "minecraft:item_model": "goldencarrotbuff:glow_squid_skewer",
+          "minecraft:lore": [
+            {
+              "text": "Makes you shine. Literally.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 400,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:glowing",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "nautilus_chowder",
+      "name": "Nautilus Chowder",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "nautilus_chowder"
+          },
+          "minecraft:item_name": "Nautilus Chowder",
+          "minecraft:item_model": "goldencarrotbuff:nautilus_chowder",
+          "minecraft:lore": [
+            {
+              "text": "Served in the shell.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:conduit_power",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:bowl",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "fried_pufferfish",
+      "name": "Fried Pufferfish",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "fried_pufferfish"
+          },
+          "minecraft:item_name": "Fried Pufferfish",
+          "minecraft:item_model": "goldencarrotbuff:fried_pufferfish",
+          "minecraft:lore": [
+            {
+              "text": "Prepared by someone who knew what they were doing.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 7,
+            "saturation": 8.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 1200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "cod_cakes",
+      "name": "Cod Cakes",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "cod_cakes"
+          },
+          "minecraft:item_name": "Cod Cakes",
+          "minecraft:item_model": "goldencarrotbuff:cod_cakes",
+          "minecraft:lore": [
+            {
+              "text": "Golden on the outside, flaky within.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "seaweed_wrap",
+      "name": "Seaweed Wrap",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "seaweed_wrap"
+          },
+          "minecraft:item_name": "Seaweed Wrap",
+          "minecraft:item_model": "goldencarrotbuff:seaweed_wrap",
+          "minecraft:lore": [
+            {
+              "text": "Salmon, rolled tight in kelp.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": []
+          }
+        }
+      }
+    },
+    {
+      "id": "apple_cider",
+      "name": "Apple Cider",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "apple_cider"
+          },
+          "minecraft:item_name": "Apple Cider",
+          "minecraft:item_model": "goldencarrotbuff:apple_cider",
+          "minecraft:lore": [
+            {
+              "text": "Warm and spiced.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 60,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "hot_cocoa",
+      "name": "Hot Cocoa",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "hot_cocoa"
+          },
+          "minecraft:item_name": "Hot Cocoa",
+          "minecraft:item_model": "goldencarrotbuff:hot_cocoa",
+          "minecraft:lore": [
+            {
+              "text": "Warms you from the inside.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "berry_smoothie",
+      "name": "Berry Smoothie",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "berry_smoothie"
+          },
+          "minecraft:item_name": "Berry Smoothie",
+          "minecraft:item_model": "goldencarrotbuff:berry_smoothie",
+          "minecraft:lore": [
+            {
+              "text": "Blended with the last of the ice.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "melon_juice",
+      "name": "Melon Juice",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "melon_juice"
+          },
+          "minecraft:item_name": "Melon Juice",
+          "minecraft:item_model": "goldencarrotbuff:melon_juice",
+          "minecraft:lore": [
+            {
+              "text": "Summer in a bottle.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "carrot_juice",
+      "name": "Carrot Juice",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "carrot_juice"
+          },
+          "minecraft:item_name": "Carrot Juice",
+          "minecraft:item_model": "goldencarrotbuff:carrot_juice",
+          "minecraft:lore": [
+            {
+              "text": "See in the dark. Taste the orange.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "milkshake",
+      "name": "Milkshake",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "milkshake"
+          },
+          "minecraft:item_name": "Milkshake",
+          "minecraft:item_model": "goldencarrotbuff:milkshake",
+          "minecraft:lore": [
+            {
+              "text": "Thick enough to need a wide straw.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": []
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "dandelion_tea",
+      "name": "Dandelion Iced Tea",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "dandelion_tea"
+          },
+          "minecraft:item_name": "Dandelion Iced Tea",
+          "minecraft:item_model": "goldencarrotbuff:dandelion_tea",
+          "minecraft:lore": [
+            {
+              "text": "Brewed from weeds, and proud of it.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "golden_milk",
+      "name": "Golden Milk",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "golden_milk"
+          },
+          "minecraft:item_name": "Golden Milk",
+          "minecraft:item_model": "goldencarrotbuff:golden_milk",
+          "minecraft:lore": [
+            {
+              "text": "Shimmers when you swirl it.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:absorption",
+                    "duration": 1200,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "lava_shot",
+      "name": "Lava Shot",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "lava_shot"
+          },
+          "minecraft:item_name": "Lava Shot",
+          "minecraft:item_model": "goldencarrotbuff:lava_shot",
+          "minecraft:lore": [
+            {
+              "text": "Do not sip. Do not savour.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 2,
+            "saturation": 1.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 1800,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "slime_soda",
+      "name": "Slime Soda",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "slime_soda"
+          },
+          "minecraft:item_name": "Slime Soda",
+          "minecraft:item_model": "goldencarrotbuff:slime_soda",
+          "minecraft:lore": [
+            {
+              "text": "Fizzes green. Bounces you higher.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 600,
+                    "amplifier": 1
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "ender_tonic",
+      "name": "Ender Tonic",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "ender_tonic"
+          },
+          "minecraft:item_name": "Ender Tonic",
+          "minecraft:item_model": "goldencarrotbuff:ender_tonic",
+          "minecraft:lore": [
+            {
+              "text": "Drink it and hold on.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 2,
+            "saturation": 1.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:slow_falling",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              },
+              {
+                "type": "minecraft:teleport_randomly",
+                "diameter": 16.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "ghast_milk",
+      "name": "Ghast Milk",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "ghast_milk"
+          },
+          "minecraft:item_name": "Ghast Milk",
+          "minecraft:item_model": "goldencarrotbuff:ghast_milk",
+          "minecraft:lore": [
+            {
+              "text": "Washes everything away. Everything.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:clear_all_effects"
+              },
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 100,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "coffee"
+          },
+          "minecraft:item_name": "Coffee",
+          "minecraft:item_model": "goldencarrotbuff:coffee",
+          "minecraft:lore": [
+            {
+              "text": "The mine digs itself.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "common",
+          "minecraft:food": {
+            "nutrition": 3,
+            "saturation": 2.4,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 600,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:haste",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "ocean_breeze",
+      "name": "Ocean Breeze",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "ocean_breeze"
+          },
+          "minecraft:item_name": "Ocean Breeze",
+          "minecraft:item_model": "goldencarrotbuff:ocean_breeze",
+          "minecraft:lore": [
+            {
+              "text": "Salt, spray, and a hint of pickle.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "drink",
+            "sound": "minecraft:entity.generic.drink",
+            "has_consume_particles": false,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:dolphins_grace",
+                    "duration": 600,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:water_breathing",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          },
+          "minecraft:use_remainder": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "minecraft:max_stack_size": 16
+        }
+      }
+    },
+    {
+      "id": "sculk_truffle",
+      "name": "Sculk Truffle",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "sculk_truffle"
+          },
+          "minecraft:item_name": "Sculk Truffle",
+          "minecraft:item_model": "goldencarrotbuff:sculk_truffle",
+          "minecraft:lore": [
+            {
+              "text": "Dug up where nothing should grow.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": true
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:resistance",
+                    "duration": 300,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 300,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "phantom_pudding",
+      "name": "Phantom Pudding",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "phantom_pudding"
+          },
+          "minecraft:item_name": "Phantom Pudding",
+          "minecraft:item_model": "goldencarrotbuff:phantom_pudding",
+          "minecraft:lore": [
+            {
+              "text": "Light as air. Lighter, actually.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:slow_falling",
+                    "duration": 1200,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:night_vision",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "dragon_pepper",
+      "name": "Dragon Pepper",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "dragon_pepper"
+          },
+          "minecraft:item_name": "Dragon Pepper",
+          "minecraft:item_model": "goldencarrotbuff:dragon_pepper",
+          "minecraft:lore": [
+            {
+              "text": "Ripened in dragon's breath.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:food": {
+            "nutrition": 4,
+            "saturation": 4.8,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:strength",
+                    "duration": 400,
+                    "amplifier": 1
+                  },
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "golden_sundae",
+      "name": "Golden Sundae",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "golden_sundae"
+          },
+          "minecraft:item_name": "Golden Sundae",
+          "minecraft:item_model": "goldencarrotbuff:golden_sundae",
+          "minecraft:lore": [
+            {
+              "text": "Ice cream, but make it expensive.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": true
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:absorption",
+                    "duration": 1200,
+                    "amplifier": 1
+                  },
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "ancient_grain_loaf",
+      "name": "Ancient Grain Loaf",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "ancient_grain_loaf"
+          },
+          "minecraft:item_name": "Ancient Grain Loaf",
+          "minecraft:item_model": "goldencarrotbuff:ancient_grain_loaf",
+          "minecraft:lore": [
+            {
+              "text": "Baked from seeds a sniffer dug up.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 12.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:luck",
+                    "duration": 2400,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "deep_sea_delicacy",
+      "name": "Deep Sea Delicacy",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "deep_sea_delicacy"
+          },
+          "minecraft:item_name": "Deep Sea Delicacy",
+          "minecraft:item_model": "goldencarrotbuff:deep_sea_delicacy",
+          "minecraft:lore": [
+            {
+              "text": "Only the old guardians know the recipe.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 14.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:conduit_power",
+                    "duration": 2400,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:dolphins_grace",
+                    "duration": 1200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "breeze_meringue",
+      "name": "Breeze Meringue",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "breeze_meringue"
+          },
+          "minecraft:item_name": "Breeze Meringue",
+          "minecraft:item_model": "goldencarrotbuff:breeze_meringue",
+          "minecraft:lore": [
+            {
+              "text": "Whipped by an actual breeze.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:jump_boost",
+                    "duration": 600,
+                    "amplifier": 1
+                  },
+                  {
+                    "id": "minecraft:slow_falling",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "trial_ration",
+      "name": "Trial Ration",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "trial_ration"
+          },
+          "minecraft:item_name": "Trial Ration",
+          "minecraft:item_model": "goldencarrotbuff:trial_ration",
+          "minecraft:lore": [
+            {
+              "text": "Packed for whoever makes it through.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 10,
+            "saturation": 16.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:resistance",
+                    "duration": 200,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:absorption",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "resin_toffee",
+      "name": "Resin Toffee",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "resin_toffee"
+          },
+          "minecraft:item_name": "Resin Toffee",
+          "minecraft:item_model": "goldencarrotbuff:resin_toffee",
+          "minecraft:lore": [
+            {
+              "text": "Chewy, amber, and faintly creaky.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 5,
+            "saturation": 6.0,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:haste",
+                    "duration": 1200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "spore_salad",
+      "name": "Spore Salad",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "spore_salad"
+          },
+          "minecraft:item_name": "Spore Salad",
+          "minecraft:item_model": "goldencarrotbuff:spore_salad",
+          "minecraft:lore": [
+            {
+              "text": "Picked from the ceiling of a lush cave.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "uncommon",
+          "minecraft:food": {
+            "nutrition": 6,
+            "saturation": 7.2,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 200,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "torchflower_omelette",
+      "name": "Torchflower Omelette",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "torchflower_omelette"
+          },
+          "minecraft:item_name": "Torchflower Omelette",
+          "minecraft:item_model": "goldencarrotbuff:torchflower_omelette",
+          "minecraft:lore": [
+            {
+              "text": "Folded around a flower that was once thought lost.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "rare",
+          "minecraft:food": {
+            "nutrition": 8,
+            "saturation": 9.6,
+            "can_always_eat": false
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:fire_resistance",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "celebration_cake",
+      "name": "Celebration Cake",
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "gcb_food": "celebration_cake"
+          },
+          "minecraft:item_name": "Celebration Cake",
+          "minecraft:item_model": "goldencarrotbuff:celebration_cake",
+          "minecraft:lore": [
+            {
+              "text": "Someone did something worth celebrating.",
+              "color": "gray",
+              "italic": false
+            }
+          ],
+          "minecraft:rarity": "epic",
+          "minecraft:food": {
+            "nutrition": 12,
+            "saturation": 16.0,
+            "can_always_eat": true
+          },
+          "minecraft:consumable": {
+            "consume_seconds": 1.6,
+            "animation": "eat",
+            "sound": "minecraft:entity.generic.eat",
+            "has_consume_particles": true,
+            "on_consume_effects": [
+              {
+                "type": "minecraft:apply_effects",
+                "effects": [
+                  {
+                    "id": "minecraft:regeneration",
+                    "duration": 200,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:absorption",
+                    "duration": 1200,
+                    "amplifier": 0
+                  },
+                  {
+                    "id": "minecraft:speed",
+                    "duration": 600,
+                    "amplifier": 0
+                  }
+                ],
+                "probability": 1.0
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "loot_injections": {
+    "minecraft:chests/village/village_plains_house": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_desert_house": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_savanna_house": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_snowy_house": [
+      "goldencarrotbuff:chests/village",
+      "goldencarrotbuff:chests/snowy"
+    ],
+    "minecraft:chests/village/village_taiga_house": [
+      "goldencarrotbuff:chests/village",
+      "goldencarrotbuff:chests/snowy"
+    ],
+    "minecraft:chests/village/village_butcher": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_shepherd": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_temple": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_tannery": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_mason": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_toolsmith": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_cartographer": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_fletcher": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_armorer": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_weaponsmith": [
+      "goldencarrotbuff:chests/village"
+    ],
+    "minecraft:chests/village/village_fisher": [
+      "goldencarrotbuff:chests/fisher"
+    ],
+    "minecraft:chests/igloo_chest": [
+      "goldencarrotbuff:chests/snowy"
+    ],
+    "minecraft:chests/simple_dungeon": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/abandoned_mineshaft": [
+      "goldencarrotbuff:chests/dungeon",
+      "goldencarrotbuff:chests/mineshaft"
+    ],
+    "minecraft:chests/stronghold_corridor": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/stronghold_crossing": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/stronghold_library": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/pillager_outpost": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/ruined_portal": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/spawn_bonus_chest": [
+      "goldencarrotbuff:chests/dungeon"
+    ],
+    "minecraft:chests/woodland_mansion": [
+      "goldencarrotbuff:chests/mansion"
+    ],
+    "minecraft:chests/desert_pyramid": [
+      "goldencarrotbuff:chests/desert"
+    ],
+    "minecraft:chests/jungle_temple": [
+      "goldencarrotbuff:chests/desert"
+    ],
+    "minecraft:chests/shipwreck_supply": [
+      "goldencarrotbuff:chests/ocean"
+    ],
+    "minecraft:chests/shipwreck_treasure": [
+      "goldencarrotbuff:chests/ocean"
+    ],
+    "minecraft:chests/underwater_ruin_small": [
+      "goldencarrotbuff:chests/ocean"
+    ],
+    "minecraft:chests/underwater_ruin_big": [
+      "goldencarrotbuff:chests/ocean"
+    ],
+    "minecraft:chests/buried_treasure": [
+      "goldencarrotbuff:chests/treasure"
+    ],
+    "minecraft:chests/nether_bridge": [
+      "goldencarrotbuff:chests/nether"
+    ],
+    "minecraft:chests/bastion_other": [
+      "goldencarrotbuff:chests/nether"
+    ],
+    "minecraft:chests/bastion_bridge": [
+      "goldencarrotbuff:chests/nether"
+    ],
+    "minecraft:chests/bastion_hoglin_stable": [
+      "goldencarrotbuff:chests/nether"
+    ],
+    "minecraft:chests/bastion_treasure": [
+      "goldencarrotbuff:chests/nether"
+    ],
+    "minecraft:chests/end_city_treasure": [
+      "goldencarrotbuff:chests/end"
+    ],
+    "minecraft:chests/ancient_city": [
+      "goldencarrotbuff:chests/deep"
+    ],
+    "minecraft:chests/ancient_city_ice_box": [
+      "goldencarrotbuff:chests/deep"
+    ],
+    "minecraft:chests/trial_chambers/supply": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/corridor": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/intersection": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/intersection_barrel": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/entrance": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/reward": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/reward_common": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:chests/trial_chambers/reward_rare": [
+      "goldencarrotbuff:chests/trial"
+    ],
+    "minecraft:gameplay/fishing": [
+      "goldencarrotbuff:fishing/fishing"
+    ],
+    "minecraft:archaeology/desert_pyramid": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:archaeology/desert_well": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:archaeology/trail_ruins_common": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:archaeology/trail_ruins_rare": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:archaeology/ocean_ruin_cold": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:archaeology/ocean_ruin_warm": [
+      "goldencarrotbuff:archaeology/archaeology"
+    ],
+    "minecraft:entities/cow": [
+      "goldencarrotbuff:entities/cow"
+    ],
+    "minecraft:entities/pig": [
+      "goldencarrotbuff:entities/pig"
+    ],
+    "minecraft:entities/hoglin": [
+      "goldencarrotbuff:entities/hoglin"
+    ],
+    "minecraft:entities/chicken": [
+      "goldencarrotbuff:entities/chicken"
+    ],
+    "minecraft:entities/sheep": [
+      "goldencarrotbuff:entities/sheep"
+    ],
+    "minecraft:entities/rabbit": [
+      "goldencarrotbuff:entities/rabbit"
+    ],
+    "minecraft:entities/slime": [
+      "goldencarrotbuff:entities/slime"
+    ],
+    "minecraft:entities/bee": [
+      "goldencarrotbuff:entities/bee"
+    ],
+    "minecraft:entities/squid": [
+      "goldencarrotbuff:entities/squid"
+    ],
+    "minecraft:entities/glow_squid": [
+      "goldencarrotbuff:entities/glow_squid"
+    ],
+    "minecraft:entities/phantom": [
+      "goldencarrotbuff:entities/phantom"
+    ],
+    "minecraft:entities/zombie": [
+      "goldencarrotbuff:entities/zombie"
+    ],
+    "minecraft:entities/husk": [
+      "goldencarrotbuff:entities/husk"
+    ],
+    "minecraft:entities/drowned": [
+      "goldencarrotbuff:entities/drowned"
+    ],
+    "minecraft:entities/stray": [
+      "goldencarrotbuff:entities/stray"
+    ],
+    "minecraft:entities/wither_skeleton": [
+      "goldencarrotbuff:entities/wither_skeleton"
+    ],
+    "minecraft:entities/ghast": [
+      "goldencarrotbuff:entities/ghast"
+    ],
+    "minecraft:entities/blaze": [
+      "goldencarrotbuff:entities/blaze"
+    ],
+    "minecraft:entities/magma_cube": [
+      "goldencarrotbuff:entities/magma_cube"
+    ],
+    "minecraft:entities/strider": [
+      "goldencarrotbuff:entities/strider"
+    ],
+    "minecraft:entities/piglin": [
+      "goldencarrotbuff:entities/piglin"
+    ],
+    "minecraft:entities/enderman": [
+      "goldencarrotbuff:entities/enderman"
+    ],
+    "minecraft:entities/shulker": [
+      "goldencarrotbuff:entities/shulker"
+    ],
+    "minecraft:entities/breeze": [
+      "goldencarrotbuff:entities/breeze"
+    ],
+    "minecraft:entities/polar_bear": [
+      "goldencarrotbuff:entities/polar_bear"
+    ],
+    "minecraft:entities/fox": [
+      "goldencarrotbuff:entities/fox"
+    ],
+    "minecraft:entities/panda": [
+      "goldencarrotbuff:entities/panda"
+    ],
+    "minecraft:entities/dolphin": [
+      "goldencarrotbuff:entities/dolphin"
+    ],
+    "minecraft:entities/pillager": [
+      "goldencarrotbuff:entities/pillager"
+    ],
+    "minecraft:entities/vindicator": [
+      "goldencarrotbuff:entities/vindicator"
+    ],
+    "minecraft:entities/ravager": [
+      "goldencarrotbuff:entities/ravager"
+    ],
+    "minecraft:entities/evoker": [
+      "goldencarrotbuff:entities/evoker"
+    ],
+    "minecraft:entities/warden": [
+      "goldencarrotbuff:entities/warden"
+    ],
+    "minecraft:entities/elder_guardian": [
+      "goldencarrotbuff:entities/elder_guardian"
+    ],
+    "minecraft:entities/ender_dragon": [
+      "goldencarrotbuff:entities/ender_dragon"
+    ]
+  },
+  "trades": [
+    {
+      "profession": "farmer",
+      "level": 2,
+      "food": "blueberry_muffin",
+      "count": 4,
+      "emeralds": 3
+    },
+    {
+      "profession": "farmer",
+      "level": 2,
+      "food": "apple_pie",
+      "count": 1,
+      "emeralds": 2
+    },
+    {
+      "profession": "farmer",
+      "level": 3,
+      "food": "carrot_cake",
+      "count": 1,
+      "emeralds": 5
+    },
+    {
+      "profession": "farmer",
+      "level": 4,
+      "food": "celebration_cake",
+      "count": 1,
+      "emeralds": 24
+    },
+    {
+      "profession": "butcher",
+      "level": 2,
+      "food": "bacon",
+      "count": 6,
+      "emeralds": 3
+    },
+    {
+      "profession": "butcher",
+      "level": 3,
+      "food": "fried_chicken",
+      "count": 2,
+      "emeralds": 4
+    },
+    {
+      "profession": "butcher",
+      "level": 4,
+      "food": "wagyu_steak",
+      "count": 1,
+      "emeralds": 8
+    },
+    {
+      "profession": "fisherman",
+      "level": 2,
+      "food": "fish_and_chips",
+      "count": 2,
+      "emeralds": 3
+    },
+    {
+      "profession": "fisherman",
+      "level": 3,
+      "food": "salmon_sushi",
+      "count": 3,
+      "emeralds": 4
+    },
+    {
+      "profession": "shepherd",
+      "level": 2,
+      "food": "roast_lamb",
+      "count": 1,
+      "emeralds": 4
+    },
+    {
+      "profession": "cleric",
+      "level": 3,
+      "food": "golden_milk",
+      "count": 1,
+      "emeralds": 6
+    }
+  ]
+}

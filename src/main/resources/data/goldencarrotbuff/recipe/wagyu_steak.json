@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:cooked_beef",
+    "minecraft:cooked_beef",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "wagyu_steak"
+      },
+      "minecraft:item_name": "Wagyu Steak",
+      "minecraft:item_model": "goldencarrotbuff:wagyu_steak",
+      "minecraft:lore": [
+        {
+          "text": "Marbled like a museum floor.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "uncommon",
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation": 16.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:strength",
+                "duration": 400,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

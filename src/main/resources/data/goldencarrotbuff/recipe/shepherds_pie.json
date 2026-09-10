@@ -1,0 +1,55 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:cooked_mutton",
+    "minecraft:baked_potato",
+    "minecraft:carrot",
+    "minecraft:wheat",
+    "minecraft:egg"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "shepherds_pie"
+      },
+      "minecraft:item_name": "Shepherd's Pie",
+      "minecraft:item_model": "goldencarrotbuff:shepherds_pie",
+      "minecraft:lore": [
+        {
+          "text": "Mash on top, comfort underneath.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 10,
+        "saturation": 14.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:resistance",
+                "duration": 300,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

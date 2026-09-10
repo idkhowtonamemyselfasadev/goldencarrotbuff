@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "goldencarrotbuff",
+  "version": "${version}",
+  "name": "GoldenCarrotBuff",
+  "description": "Golden carrots edible at full hunger with a buff, golden apples retuned, and 100 new craftable foods found in chests, mob drops and villager trades. Server-side only: players join with a vanilla client and install nothing.",
+  "authors": [
+    "Tim"
+  ],
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "dev.goldencarrot.GoldenCarrotBuff"
+    ]
+  },
+  "mixins": [
+    "goldencarrotbuff.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

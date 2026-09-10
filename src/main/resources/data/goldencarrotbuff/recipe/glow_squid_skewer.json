@@ -1,0 +1,58 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:glow_ink_sac",
+    "minecraft:glow_ink_sac",
+    "minecraft:stick"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 2,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "glow_squid_skewer"
+      },
+      "minecraft:item_name": "Glow Squid Skewer",
+      "minecraft:item_model": "goldencarrotbuff:glow_squid_skewer",
+      "minecraft:lore": [
+        {
+          "text": "Makes you shine. Literally.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "uncommon",
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation": 7.2,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:night_vision",
+                "duration": 400,
+                "amplifier": 0
+              },
+              {
+                "id": "minecraft:glowing",
+                "duration": 300,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      }
+    }
+  }
+}

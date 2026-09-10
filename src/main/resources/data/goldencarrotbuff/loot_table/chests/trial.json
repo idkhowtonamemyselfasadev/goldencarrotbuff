@@ -1,0 +1,193 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.6
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "rock_candy"
+                },
+                "minecraft:item_name": "Rock Candy",
+                "minecraft:item_model": "goldencarrotbuff:rock_candy",
+                "minecraft:lore": [
+                  {
+                    "text": "Crystallised sugar, geologist approved.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 4,
+                  "saturation": 2.4,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:haste",
+                          "duration": 400,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "breeze_meringue"
+                },
+                "minecraft:item_name": "Breeze Meringue",
+                "minecraft:item_model": "goldencarrotbuff:breeze_meringue",
+                "minecraft:lore": [
+                  {
+                    "text": "Whipped by an actual breeze.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "rare",
+                "minecraft:food": {
+                  "nutrition": 5,
+                  "saturation": 6.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:jump_boost",
+                          "duration": 600,
+                          "amplifier": 1
+                        },
+                        {
+                          "id": "minecraft:slow_falling",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "trial_ration"
+                },
+                "minecraft:item_name": "Trial Ration",
+                "minecraft:item_model": "goldencarrotbuff:trial_ration",
+                "minecraft:lore": [
+                  {
+                    "text": "Packed for whoever makes it through.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 10,
+                  "saturation": 16.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:resistance",
+                          "duration": 200,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:absorption",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

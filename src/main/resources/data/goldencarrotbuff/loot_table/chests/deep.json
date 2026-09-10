@@ -1,0 +1,245 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.6
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "glow_berry_tart"
+                },
+                "minecraft:item_name": "Glow Berry Tart",
+                "minecraft:item_model": "goldencarrotbuff:glow_berry_tart",
+                "minecraft:lore": [
+                  {
+                    "text": "Faintly glows in the dark.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:night_vision",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "cave_cap"
+                },
+                "minecraft:item_name": "Glowing Cave Cap",
+                "minecraft:item_model": "goldencarrotbuff:cave_cap",
+                "minecraft:lore": [
+                  {
+                    "text": "Found where the torches run out.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "common",
+                "minecraft:food": {
+                  "nutrition": 5,
+                  "saturation": 6.0,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:night_vision",
+                          "duration": 600,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "sculk_truffle"
+                },
+                "minecraft:item_name": "Sculk Truffle",
+                "minecraft:item_model": "goldencarrotbuff:sculk_truffle",
+                "minecraft:lore": [
+                  {
+                    "text": "Dug up where nothing should grow.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "epic",
+                "minecraft:food": {
+                  "nutrition": 8,
+                  "saturation": 9.6,
+                  "can_always_eat": true
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:resistance",
+                          "duration": 300,
+                          "amplifier": 0
+                        },
+                        {
+                          "id": "minecraft:strength",
+                          "duration": 300,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "gcb_food": "spore_salad"
+                },
+                "minecraft:item_name": "Spore Salad",
+                "minecraft:item_model": "goldencarrotbuff:spore_salad",
+                "minecraft:lore": [
+                  {
+                    "text": "Picked from the ceiling of a lush cave.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:rarity": "uncommon",
+                "minecraft:food": {
+                  "nutrition": 6,
+                  "saturation": 7.2,
+                  "can_always_eat": false
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "effects": [
+                        {
+                          "id": "minecraft:regeneration",
+                          "duration": 200,
+                          "amplifier": 0
+                        }
+                      ],
+                      "probability": 1.0
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

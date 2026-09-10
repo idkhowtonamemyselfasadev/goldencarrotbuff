@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gcb_food",
+  "ingredients": [
+    "minecraft:cooked_beef",
+    "minecraft:potato",
+    "minecraft:carrot",
+    "minecraft:brown_mushroom",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "minecraft:bread",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "gcb_food": "hearty_stew"
+      },
+      "minecraft:item_name": "Hearty Stew",
+      "minecraft:item_model": "goldencarrotbuff:hearty_stew",
+      "minecraft:lore": [
+        {
+          "text": "Sticks to your ribs.",
+          "color": "gray",
+          "italic": false
+        }
+      ],
+      "minecraft:rarity": "common",
+      "minecraft:food": {
+        "nutrition": 12,
+        "saturation": 16.0,
+        "can_always_eat": false
+      },
+      "minecraft:consumable": {
+        "consume_seconds": 1.6,
+        "animation": "eat",
+        "sound": "minecraft:entity.generic.eat",
+        "has_consume_particles": true,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:regeneration",
+                "duration": 100,
+                "amplifier": 0
+              }
+            ],
+            "probability": 1.0
+          }
+        ]
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:bowl",
+        "count": 1
+      },
+      "minecraft:max_stack_size": 16
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.goldencarrot.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "server": [
+    "ConsumableMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
