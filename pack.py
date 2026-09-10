@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
-"""Custom 3D models and textures for the 100 foods, packed as a resource pack.
+"""Pixel-art sprites for the 100 foods, packed as a resource pack.
 
     python3 pack.py            writes pack/ and release/goldencarrotbuff-pack.zip, prints the SHA-1
 
-Every food gets a real 3D model in Minecraft's model format (the same JSON Blockbench
-and the Blender plugin export): a handful of cuboids per shape, each face mapped onto a
-32x32 texture that carries four dithered colour swatches (main, second, accent, dark).
-Shapes are shared archetypes -- muffin, pie, bottle, bowl, skewer and so on -- and each
-food picks a shape plus its own four colours below.
+Every food gets a 16x16 sprite painted the way vanilla items are: a silhouette with a
+dark outline, light falling from the top left, a specular glint, then details on top
+(berries, grill marks, lattice, bubbles, drips). The game extrudes the sprite into the
+usual thin 3D item in hand, exactly like a vanilla apple or bread.
+
+Sprites are built from a handful of painted shapes -- muffin, pie, bottle, bowl,
+skewer and so on -- each taking a palette, and each food picks a shape plus its own
+colours in LOOKS below.
 
 The server points a food's `item_model` at `goldencarrotbuff:<id>`, which resolves to
   assets/goldencarrotbuff/items/<id>.json          -> model goldencarrotbuff:item/<id>
-  assets/goldencarrotbuff/models/item/<id>.json    -> the cuboids
-  assets/goldencarrotbuff/textures/item/<id>.png   -> the swatches
+  assets/goldencarrotbuff/models/item/<id>.json    -> item/generated with the sprite
+  assets/goldencarrotbuff/textures/item/<id>.png   -> the sprite
 """
 import hashlib
 import json
+import math
 import os
 import random
 import shutil
@@ -34,237 +38,468 @@ ZIP = os.path.join(ROOT, "release", "goldencarrotbuff-pack.zip")
 # Resource pack format of 1.21.11 (version.json in the server jar says 75.0).
 PACK_FORMAT = 75
 
-# Texture layout: four 16x16 swatches in a 32x32 image.
-ROLES = {"main": (0, 0), "second": (16, 0), "accent": (0, 16), "dark": (16, 16)}
+S = 16
 
 
 # ---------------------------------------------------------------------------------
-# Shapes. Each returns a list of (from, to, role) cuboids inside the 16x16x16 box,
-# y up, the item standing on y=0 and centred on x=8, z=8.
+# Colour helpers
 # ---------------------------------------------------------------------------------
-def box(x1, y1, z1, x2, y2, z2, role):
-    return ([x1, y1, z1], [x2, y2, z2], role)
-
-
-def muffin():
-    return [box(5, 0, 5, 11, 5, 11, "accent"),        # paper cup
-            box(4, 5, 4, 12, 9, 12, "main"),          # dome
-            box(5, 9, 5, 11, 10, 11, "main"),
-            box(6, 10, 7, 8, 11, 9, "second"),        # a berry on top
-            box(9, 8, 5, 11, 9, 7, "second")]
-
-
-def loaf():
-    return [box(3, 0, 5, 13, 5, 11, "main"),
-            box(4, 5, 6, 12, 7, 10, "second"),        # crust ridge
-            box(6, 7, 7, 10, 8, 9, "accent")]
-
-
-def bagel():
-    return [box(3, 0, 3, 13, 4, 6, "main"), box(3, 0, 10, 13, 4, 13, "main"),
-            box(3, 0, 6, 6, 4, 10, "main"), box(10, 0, 6, 13, 4, 10, "main"),
-            box(4, 4, 4, 12, 5, 6, "second"), box(4, 4, 10, 12, 5, 12, "second")]
-
-
-def croissant():
-    return [box(2, 0, 6, 6, 4, 10, "main"), box(5, 0, 5, 11, 5, 11, "main"),
-            box(10, 0, 6, 14, 4, 10, "main"), box(6, 5, 6, 10, 6, 10, "second")]
-
-
-def pie():
-    return [box(2, 0, 2, 14, 3, 14, "accent"),        # dish
-            box(3, 3, 3, 13, 5, 13, "main"),          # filling
-            box(3, 5, 3, 13, 6, 5, "second"), box(3, 5, 11, 13, 6, 13, "second"),
-            box(3, 5, 5, 5, 6, 11, "second"), box(11, 5, 5, 13, 6, 11, "second"),
-            box(7, 5, 3, 9, 6, 13, "second"), box(3, 5, 7, 13, 6, 9, "second")]
-
-
-def cake():
-    return [box(2, 0, 2, 14, 4, 14, "main"),
-            box(2, 4, 2, 14, 5, 14, "second"),        # jam layer
-            box(2, 5, 2, 14, 9, 14, "main"),
-            box(2, 9, 2, 14, 10, 14, "accent"),       # frosting
-            box(4, 10, 4, 6, 12, 6, "dark"), box(10, 10, 10, 12, 12, 12, "dark")]
-
-
-def slice_():
-    return [box(4, 0, 4, 12, 4, 12, "main"), box(4, 4, 4, 12, 5, 12, "second"),
-            box(4, 5, 4, 12, 8, 12, "main"), box(4, 8, 4, 12, 9, 12, "accent"),
-            box(7, 9, 7, 9, 11, 9, "dark")]
-
-
-def steak():
-    return [box(2, 0, 4, 14, 3, 12, "main"), box(3, 3, 5, 13, 4, 11, "second"),
-            box(5, 4, 6, 7, 5, 8, "accent"), box(9, 4, 8, 11, 5, 10, "accent")]
-
-
-def drumstick():
-    return [box(2, 1, 7, 8, 3, 9, "accent"),          # bone
-            box(1, 0, 6, 3, 4, 10, "accent"),
-            box(7, 0, 4, 14, 6, 12, "main"),          # meat
-            box(8, 6, 5, 13, 7, 11, "second")]
-
-
-def nuggets():
-    return [box(2, 0, 3, 7, 3, 8, "main"), box(8, 0, 2, 13, 3, 6, "main"),
-            box(4, 0, 9, 9, 3, 13, "main"), box(10, 0, 8, 14, 3, 12, "main"),
-            box(3, 3, 4, 6, 4, 7, "second"), box(9, 3, 3, 12, 4, 5, "second"),
-            box(5, 3, 10, 8, 4, 12, "second")]
-
-
-def bowl():
-    return [box(3, 0, 3, 13, 1, 13, "accent"),        # base
-            box(2, 1, 2, 14, 5, 3, "accent"), box(2, 1, 13, 14, 5, 14, "accent"),
-            box(2, 1, 3, 3, 5, 13, "accent"), box(13, 1, 3, 14, 5, 13, "accent"),
-            box(3, 1, 3, 13, 4, 13, "main"),          # soup
-            box(5, 4, 5, 7, 5, 7, "second"), box(9, 4, 8, 11, 5, 10, "second"),
-            box(6, 4, 10, 8, 5, 12, "dark")]
-
-
-def bottle():
-    return [box(5, 0, 5, 11, 1, 11, "accent"),        # glass base
-            box(5, 1, 5, 11, 8, 11, "main"),          # liquid
-            box(6, 8, 6, 10, 10, 10, "accent"),       # shoulder
-            box(6, 10, 6, 10, 13, 10, "accent"),      # neck
-            box(6, 13, 6, 10, 14, 10, "dark"),        # cork
-            box(4, 3, 7, 5, 6, 9, "second"), box(11, 3, 7, 12, 6, 9, "second")]  # label edges
-
-
-def jar():
-    return [box(4, 0, 4, 12, 7, 12, "main"), box(3, 7, 3, 13, 9, 13, "accent"),
-            box(4, 9, 4, 12, 10, 12, "dark"), box(4, 2, 3, 12, 5, 4, "second")]
-
-
-def lollipop():
-    return [box(7, 0, 7, 9, 8, 9, "accent"), box(5, 8, 6, 11, 14, 10, "main"),
-            box(6, 14, 7, 10, 15, 9, "main"), box(6, 9, 5, 10, 13, 6, "second"),
-            box(6, 9, 10, 10, 13, 11, "second")]
-
-
-def drop():
-    return [box(5, 0, 5, 11, 4, 11, "main"), box(6, 4, 6, 10, 7, 10, "main"),
-            box(7, 7, 7, 9, 9, 9, "second")]
-
-
-def bar():
-    return [box(2, 0, 5, 14, 2, 11, "main"),
-            box(3, 2, 6, 5, 3, 10, "second"), box(6, 2, 6, 8, 3, 10, "second"),
-            box(9, 2, 6, 11, 3, 10, "second"), box(12, 2, 6, 13, 3, 10, "second")]
-
-
-def skewer():
-    return [box(7, 0, 7, 9, 15, 9, "accent"), box(5, 3, 5, 11, 6, 11, "main"),
-            box(5, 7, 5, 11, 10, 11, "second"), box(5, 11, 5, 11, 14, 11, "main")]
-
-
-def fruit():
-    return [box(4, 0, 4, 12, 7, 12, "main"), box(5, 7, 5, 11, 9, 11, "main"),
-            box(7, 9, 7, 9, 12, 9, "dark"), box(9, 10, 8, 12, 11, 9, "second")]
-
-
-def ball():
-    return [box(4, 0, 4, 12, 7, 12, "main"), box(5, 7, 5, 11, 9, 11, "main"),
-            box(4, 2, 3, 12, 5, 4, "second")]
-
-
-def pile():
-    return [box(3, 0, 3, 13, 3, 13, "main"), box(4, 3, 4, 12, 5, 12, "main"),
-            box(5, 5, 6, 7, 6, 8, "second"), box(8, 5, 5, 10, 6, 7, "accent"),
-            box(7, 5, 9, 9, 6, 11, "dark"), box(10, 5, 9, 12, 6, 11, "second")]
-
-
-def plant():
-    return [box(7, 0, 7, 9, 9, 9, "dark"), box(3, 6, 7, 13, 12, 9, "main"),
-            box(7, 6, 3, 9, 12, 13, "main"), box(6, 12, 6, 10, 14, 10, "second")]
-
-
-def crystal():
-    return [box(6, 0, 6, 10, 10, 10, "main"), box(7, 10, 7, 9, 12, 9, "second"),
-            box(3, 0, 8, 6, 6, 11, "main"), box(10, 0, 4, 13, 5, 7, "second")]
-
-
-def pizza():
-    return [box(1, 0, 1, 15, 2, 15, "accent"), box(2, 2, 2, 14, 3, 14, "main"),
-            box(3, 3, 4, 6, 4, 7, "second"), box(9, 3, 3, 12, 4, 6, "dark"),
-            box(5, 3, 9, 8, 4, 12, "second"), box(10, 3, 9, 13, 4, 12, "dark")]
-
-
-def fish():
-    return [box(4, 1, 6, 13, 6, 10, "main"), box(1, 0, 7, 4, 7, 9, "second"),
-            box(5, 6, 7, 11, 7, 9, "second"), box(11, 3, 5, 12, 4, 6, "dark")]
-
-
-def sushi():
-    return [box(4, 0, 5, 12, 5, 11, "dark"), box(5, 5, 6, 11, 7, 10, "main"),
-            box(6, 2, 4, 10, 4, 5, "second")]
-
-
-def wrap():
-    return [box(3, 0, 5, 13, 5, 11, "dark"), box(3, 1, 4, 5, 4, 5, "main"),
-            box(11, 1, 4, 13, 4, 5, "main"), box(6, 5, 7, 10, 6, 9, "second")]
-
-
-def cheese():
-    return [box(2, 0, 2, 14, 6, 14, "main"), box(2, 6, 2, 14, 7, 14, "second"),
-            box(9, 0, 9, 14, 7, 14, "accent")]
-
-
-def bacon():
-    return [box(2, 0, 6, 14, 1, 10, "main"), box(3, 1, 5, 6, 2, 11, "second"),
-            box(7, 1, 5, 10, 2, 11, "main"), box(11, 1, 5, 14, 2, 11, "second"),
-            box(2, 2, 7, 14, 3, 9, "accent")]
-
-
-def eggs():
-    return [box(2, 0, 6, 14, 1, 10, "main"), box(3, 1, 3, 9, 2, 9, "accent"),
-            box(5, 2, 5, 8, 4, 8, "second"), box(9, 1, 8, 14, 2, 13, "accent"),
-            box(10, 2, 9, 13, 4, 12, "second")]
-
-
-def potato():
-    return [box(3, 0, 5, 13, 6, 11, "main"), box(4, 6, 6, 12, 7, 10, "second"),
-            box(6, 7, 7, 10, 8, 9, "accent"), box(5, 7, 6, 7, 8, 7, "dark")]
-
-
-def taco():
-    return [box(2, 0, 6, 14, 6, 10, "main"), box(3, 6, 7, 13, 8, 9, "second"),
-            box(5, 8, 7, 7, 9, 9, "accent"), box(9, 8, 7, 11, 9, 9, "dark")]
-
-
-def pepper():
-    return [box(6, 0, 6, 10, 9, 10, "main"), box(7, 9, 7, 9, 12, 9, "dark"),
-            box(5, 2, 7, 6, 7, 9, "second")]
-
-
-def shell():
-    return [box(3, 0, 4, 13, 5, 12, "main"), box(4, 5, 5, 12, 7, 11, "second"),
-            box(6, 7, 6, 10, 9, 10, "main"), box(10, 1, 2, 13, 4, 4, "accent")]
-
-
-def heart():
-    return [box(4, 0, 4, 12, 8, 12, "main"), box(3, 3, 3, 13, 6, 13, "second"),
-            box(6, 8, 6, 10, 11, 10, "accent")]
-
-
-def truffle():
-    return [box(4, 0, 4, 12, 6, 12, "main"), box(5, 6, 5, 11, 8, 11, "main"),
-            box(3, 2, 6, 4, 5, 10, "second"), box(12, 2, 6, 13, 5, 10, "second"),
-            box(6, 8, 6, 10, 9, 10, "accent")]
-
-
-def pudding():
-    return [box(3, 0, 3, 13, 1, 13, "accent"), box(4, 1, 4, 12, 6, 12, "main"),
-            box(5, 6, 5, 11, 8, 11, "main"), box(6, 8, 6, 10, 9, 10, "second")]
-
-
-def meringue():
-    return [box(4, 0, 4, 12, 3, 12, "main"), box(5, 3, 5, 11, 6, 11, "main"),
-            box(6, 6, 6, 10, 9, 10, "main"), box(7, 9, 7, 9, 11, 9, "second")]
-
-
-def ration():
-    return [box(2, 0, 4, 14, 5, 12, "accent"), box(3, 5, 5, 13, 6, 11, "dark"),
-            box(6, 6, 6, 10, 7, 10, "main"), box(4, 1, 3, 12, 4, 4, "second")]
+def rgb(h):
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def mul(c, f):
+    return tuple(max(0, min(255, int(round(v * f)))) for v in c)
+
+
+def mix(a, b, t):
+    return tuple(int(round(a[i] * (1 - t) + b[i] * t)) for i in range(3))
+
+
+# ---------------------------------------------------------------------------------
+# A tiny painter. Shapes are painted as masks, then shaded: light top-left, dark
+# bottom-right, a 1px outline, a glint. Details are drawn on top with plain pixels.
+# ---------------------------------------------------------------------------------
+class Canvas:
+    def __init__(self, seed):
+        self.px = {}          # (x, y) -> (r, g, b)
+        self.rng = random.Random(seed)
+
+    # --- masks -------------------------------------------------------------------
+    @staticmethod
+    def ellipse(cx, cy, rx, ry):
+        return {(x, y) for x in range(S) for y in range(S)
+                if ((x + 0.5 - cx) / rx) ** 2 + ((y + 0.5 - cy) / ry) ** 2 <= 1.0}
+
+    @staticmethod
+    def rect(x1, y1, x2, y2, r=0):
+        m = set()
+        for x in range(x1, x2):
+            for y in range(y1, y2):
+                if r:
+                    # rounded corners
+                    dx = max(x1 + r - x - 1, x - (x2 - r), 0)
+                    dy = max(y1 + r - y - 1, y - (y2 - r), 0)
+                    if dx * dx + dy * dy > r * r:
+                        continue
+                m.add((x, y))
+        return m
+
+    @staticmethod
+    def poly(points):
+        m = set()
+        n = len(points)
+        for x in range(S):
+            for y in range(S):
+                px, py = x + 0.5, y + 0.5
+                inside = False
+                for i in range(n):
+                    ax, ay = points[i]
+                    bx, by = points[(i + 1) % n]
+                    if (ay > py) != (by > py):
+                        ix = ax + (py - ay) * (bx - ax) / (by - ay)
+                        if px < ix:
+                            inside = not inside
+                if inside:
+                    m.add((x, y))
+        return m
+
+    # --- painting ------------------------------------------------------------------
+    def fill(self, mask, base, outline=True, glint=True, light=0.22, dark=0.28, noise=0.04):
+        """Shade a mask: light from the top-left, an outline, and a glint."""
+        if not mask:
+            return
+        xs = [p[0] for p in mask]
+        ys = [p[1] for p in mask]
+        x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+        w, h = max(1, x1 - x0), max(1, y1 - y0)
+        lightc, darkc = mul(base, 1 + light), mul(base, 1 - dark)
+        for (x, y) in mask:
+            t = ((x - x0) / w + (y - y0) / h) / 2
+            c = mix(lightc, darkc, t)
+            if noise:
+                c = mul(c, 1 + self.rng.uniform(-noise, noise))
+            self.px[(x, y)] = c
+        if outline:
+            edge = {(x, y) for (x, y) in mask
+                    if any((x + dx, y + dy) not in mask for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
+            for p in edge:
+                self.px[p] = mul(base, 0.42)
+        if glint:
+            gx, gy = x0 + max(1, w // 4), y0 + max(1, h // 4)
+            for p in ((gx, gy), (gx + 1, gy), (gx, gy + 1)):
+                if p in mask and p not in self._edge(mask):
+                    self.px[p] = mix(self.px[p], (255, 255, 255), 0.45)
+
+    @staticmethod
+    def _edge(mask):
+        return {(x, y) for (x, y) in mask
+                if any((x + dx, y + dy) not in mask for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
+
+    def dot(self, x, y, c):
+        if 0 <= x < S and 0 <= y < S:
+            self.px[(x, y)] = c
+
+    def dots(self, points, c):
+        for x, y in points:
+            self.dot(x, y, c)
+
+    def line(self, x1, y1, x2, y2, c):
+        n = max(abs(x2 - x1), abs(y2 - y1), 1)
+        for i in range(n + 1):
+            self.dot(round(x1 + (x2 - x1) * i / n), round(y1 + (y2 - y1) * i / n), c)
+
+    def paint(self, mask, c):
+        for p in mask:
+            self.px[p] = c
+
+    def image(self):
+        img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        for (x, y), c in self.px.items():
+            img.putpixel((x, y), c + (255,))
+        return img
+
+
+# ---------------------------------------------------------------------------------
+# Shapes. Each takes the canvas and a palette dict (main, second, accent, dark).
+# ---------------------------------------------------------------------------------
+def muffin(c, p):
+    cup = c.poly([(4, 8), (12, 8), (11, 15), (5, 15)])
+    c.fill(cup, p["accent"], glint=False)
+    for x in (6, 8, 10):                                   # pleats
+        c.line(x, 9, x, 14, mul(p["accent"], 0.7))
+    top = c.ellipse(8, 7.2, 5.6, 4.0)
+    c.fill(top, p["main"])
+    c.dots([(6, 5), (9, 4), (11, 7), (7, 8)], p["second"])   # berries / chips
+    c.dots([(6, 6), (9, 5)], mul(p["second"], 0.6))
+
+
+def loaf(c, p):
+    body = c.rect(2, 5, 14, 13, r=3)
+    c.fill(body, p["main"])
+    top = c.rect(3, 4, 13, 7, r=2)
+    c.fill(top, mul(p["main"], 1.08), outline=False, glint=False)
+    for x in (5, 8, 11):                                   # scoring
+        c.line(x, 5, x + 1, 6, mul(p["main"], 0.6))
+    c.dots([(4, 11), (7, 12), (10, 11)], p["second"])
+
+
+def bagel(c, p):
+    ring = c.ellipse(8, 8, 6.5, 6.0) - c.ellipse(8, 8, 2.2, 2.0)
+    c.fill(ring, p["main"])
+    c.dots([(5, 5), (9, 4), (12, 8), (6, 11), (10, 12)], p["second"])
+
+
+def croissant(c, p):
+    body = c.poly([(2, 10), (5, 5), (11, 5), (14, 10), (11, 13), (5, 13)])
+    c.fill(body, p["main"])
+    for x in (5, 8, 11):
+        c.line(x, 6, x - 1, 12, mul(p["main"], 0.62))
+    c.dots([(7, 7), (9, 7)], mul(p["main"], 1.25))
+
+
+def pie(c, p):
+    dish = c.ellipse(8, 10, 7.5, 4.5)
+    c.fill(dish, p["accent"], glint=False)
+    filling = c.ellipse(8, 8.5, 6.2, 3.6)
+    c.fill(filling, p["main"], outline=False, glint=False)
+    lat = mul(p["accent"], 1.1)
+    for x in (5, 8, 11):
+        c.line(x, 5, x, 12, lat)
+    for y in (7, 10):
+        c.line(2, y, 14, y, lat)
+    rim = c.ellipse(8, 8.5, 6.6, 4.0) - c.ellipse(8, 8.5, 5.6, 3.1)
+    c.fill(rim, p["accent"], outline=False, glint=False)
+
+
+def cake(c, p):
+    base = c.rect(2, 7, 14, 14, r=1)
+    c.fill(base, p["main"], glint=False)
+    c.paint(c.rect(3, 10, 13, 11), p["second"])            # jam layer
+    top = c.rect(2, 4, 14, 8, r=2)
+    c.fill(top, p["accent"])
+    c.dots([(4, 8), (7, 9), (10, 8), (12, 9)], p["accent"])  # drips
+    c.dots([(8, 3), (8, 2)], p["dark"])                     # cherry
+    c.dot(8, 1, mul(p["dark"], 0.6))
+
+
+def slice_(c, p):
+    wedge = c.poly([(3, 4), (13, 8), (13, 14), (3, 14)])
+    c.fill(wedge, p["main"], glint=False)
+    c.line(4, 10, 12, 12, p["second"])
+    c.line(4, 8, 12, 10, mul(p["main"], 0.7))
+    top = c.poly([(3, 3), (13, 7), (13, 9), (3, 5)])
+    c.fill(top, p["accent"], outline=False)
+    c.dots([(6, 2), (6, 1)], p["dark"])
+
+
+def steak(c, p):
+    body = c.poly([(2, 7), (5, 4), (12, 4), (14, 8), (12, 13), (4, 13)])
+    c.fill(body, p["main"])
+    grill = mul(p["main"], 0.5)
+    c.line(5, 6, 10, 11, grill)
+    c.line(8, 5, 12, 9, grill)
+    c.dots([(6, 9), (9, 7)], p["second"])
+    c.dots([(3, 8), (13, 9)], p["accent"])                  # fat rim
+
+
+def drumstick(c, p):
+    bone = c.rect(2, 10, 8, 12)
+    c.fill(bone, p["accent"], glint=False)
+    c.fill(c.ellipse(2.5, 11, 1.8, 2.0), p["accent"])
+    meat = c.ellipse(10, 7.5, 5.0, 5.0)
+    c.fill(meat, p["main"])
+    c.dots([(9, 5), (12, 8), (10, 10)], p["second"])
+
+
+def nuggets(c, p):
+    for cx, cy, rx, ry in ((5, 5, 3.4, 2.6), (11, 6, 3.2, 2.8), (6, 11, 3.2, 2.6), (11.5, 11.5, 2.8, 2.4)):
+        c.fill(c.ellipse(cx, cy, rx, ry), p["main"])
+    c.dots([(4, 5), (11, 5), (6, 11), (12, 11)], p["second"])
+
+
+def bowl(c, p):
+    body = c.poly([(1, 8), (15, 8), (13, 14), (3, 14)])
+    c.fill(body, p["accent"], glint=False)
+    c.line(2, 12, 14, 12, mul(p["accent"], 0.7))
+    soup = c.ellipse(8, 8, 7.0, 2.6)
+    c.fill(soup, p["main"], glint=True)
+    c.dots([(5, 7), (9, 9), (11, 7)], p["second"])
+    c.dots([(7, 8), (12, 8)], p["dark"])
+
+
+def bottle(c, p):
+    glass = rgb("BFD9E8")
+    c.fill(c.rect(6, 1, 10, 4), p["dark"], glint=False)       # cork
+    body = c.rect(4, 6, 12, 15, r=3) | c.rect(6, 3, 10, 7)
+    c.fill(body, glass, light=0.05, dark=0.2, noise=0)
+    liquid = c.rect(5, 8, 11, 14, r=2) | c.rect(7, 6, 9, 9)
+    c.fill(liquid, p["main"], outline=False, glint=False)
+    c.dots([(6, 10), (9, 12)], mul(p["main"], 1.3))           # bubbles
+    c.dots([(5, 7), (5, 8)], (240, 250, 255))                 # glass sheen
+
+
+def jar(c, p):
+    c.fill(c.rect(4, 2, 12, 5), p["dark"], glint=False)       # lid
+    body = c.rect(3, 4, 13, 15, r=2)
+    c.fill(body, p["main"])
+    c.fill(c.rect(4, 8, 12, 11), p["second"], outline=False, glint=False)  # label
+    c.line(6, 9, 10, 9, mul(p["second"], 0.6))
+    c.dots([(4, 6), (4, 7)], (240, 250, 255))
+
+
+def lollipop(c, p):
+    c.line(8, 9, 8, 15, p["accent"])
+    c.line(9, 9, 9, 15, mul(p["accent"], 0.8))
+    ball = c.ellipse(8.5, 6, 4.8, 4.8)
+    c.fill(ball, p["main"])
+    swirl = p["second"]
+    for x, y in ((6, 4), (8, 3), (10, 4), (11, 6), (10, 8), (8, 9), (6, 8), (5, 6), (8, 6)):
+        c.dot(x, y, swirl)
+
+
+def drop(c, p):
+    c.fill(c.ellipse(8, 8.5, 5.0, 4.5), p["main"])
+    c.fill(c.ellipse(8, 5.5, 2.5, 2.5), p["main"], outline=False, glint=False)
+    c.dots([(6, 5), (7, 4)], mul(p["main"], 1.35))
+    c.dots([(8, 9), (9, 10)], p["second"])
+
+
+def bar(c, p):
+    body = c.rect(2, 4, 14, 12, r=1)
+    c.fill(body, p["main"], glint=False)
+    seg = mul(p["main"], 0.65)
+    for x in (5, 8, 11):
+        c.line(x, 5, x, 10, seg)
+    c.line(3, 8, 12, 8, seg)
+    for x in (3, 6, 9, 12):
+        c.dot(x, 5, mul(p["main"], 1.3))
+    c.fill(c.rect(2, 11, 14, 13), p["accent"], outline=False, glint=False)  # wrapper edge
+
+
+def skewer(c, p):
+    stick = p["accent"]
+    c.line(2, 14, 14, 2, stick)
+    c.line(3, 14, 15, 3, mul(stick, 0.75))
+    for cx, cy, col in ((5, 11, p["main"]), (8, 8, p["second"]), (11, 5, p["main"])):
+        c.fill(c.ellipse(cx, cy, 2.6, 2.3), col)
+    c.dots([(4, 10), (7, 7), (10, 4)], mul(p["dark"], 1.2))
+
+
+def fruit(c, p):
+    body = c.ellipse(8, 9, 5.8, 5.3)
+    c.fill(body, p["main"])
+    c.line(8, 3, 8, 5, p["dark"])                              # stem
+    c.dots([(9, 3), (10, 2), (11, 2)], p["second"])              # leaf
+    c.dot(8, 4, mul(p["dark"], 0.7))
+
+
+def ball(c, p):
+    c.fill(c.ellipse(8, 8.5, 5.8, 5.6), p["main"], noise=0.06)
+    c.paint(c.rect(6, 11, 10, 14), p["second"])                  # wrap strip
+    c.dots([(6, 6), (10, 8), (8, 10)], mul(p["main"], 0.85))
+
+
+def pile(c, p):
+    for cx, cy, col in ((5, 10, p["main"]), (9, 11, p["second"]), (12, 9, p["accent"]),
+                        (7, 7, p["dark"]), (10, 6, p["main"]), (4, 6, p["second"]), (8, 12, p["accent"])):
+        c.fill(c.ellipse(cx, cy, 2.2, 1.9), col, glint=False)
+
+
+def plant(c, p):
+    c.line(8, 15, 8, 7, p["dark"])
+    c.line(8, 12, 5, 10, p["dark"])
+    c.line(8, 10, 11, 8, p["dark"])
+    for cx, cy in ((8, 4), (5, 6), (11, 6), (6, 9), (10, 10)):
+        c.fill(c.ellipse(cx, cy, 2.2, 2.0), p["main"])
+    c.dots([(8, 4), (5, 6), (11, 6)], p["second"])
+
+
+def crystal(c, p):
+    big = c.poly([(8, 1), (12, 7), (10, 14), (6, 14), (4, 7)])
+    c.fill(big, p["main"], light=0.35, dark=0.35)
+    c.line(8, 2, 7, 13, mul(p["main"], 1.35))                  # facet edge
+    small = c.poly([(12, 8), (15, 11), (13, 15), (11, 14)])
+    c.fill(small, p["second"], light=0.35, dark=0.35)
+    c.paint(c.rect(4, 14, 13, 16), p["accent"])
+
+
+def pizza(c, p):
+    crust = c.ellipse(8, 8, 7.5, 7.5)
+    c.fill(crust, p["accent"], glint=False)
+    sauce = c.ellipse(8, 8, 6.0, 6.0)
+    c.fill(sauce, p["main"], outline=False, glint=False, noise=0.08)
+    for cx, cy, col in ((5, 6, p["second"]), (10, 5, p["dark"]), (6, 11, p["dark"]), (11, 10, p["second"]), (8, 8, p["second"])):
+        c.fill(c.ellipse(cx, cy, 1.5, 1.5), col, outline=False, glint=False)
+    c.line(8, 1, 8, 15, mul(p["accent"], 0.8))                 # cut lines
+    c.line(1, 8, 15, 8, mul(p["accent"], 0.8))
+
+
+def fish(c, p):
+    body = c.ellipse(7, 8, 5.5, 3.2)
+    c.fill(body, p["main"])
+    tail = c.poly([(12, 8), (15, 5), (15, 11)])
+    c.fill(tail, p["second"])
+    c.dots([(5, 7)], p["dark"])                                  # eye
+    c.line(7, 6, 8, 9, mul(p["main"], 0.6))
+    c.line(9, 6, 10, 9, mul(p["main"], 0.6))
+
+
+def sushi(c, p):
+    roll = c.ellipse(8, 8, 6.2, 6.2)
+    c.fill(roll, p["dark"], glint=False)
+    rice = c.ellipse(8, 8, 4.4, 4.4)
+    c.fill(rice, p["accent"], outline=False, glint=False, noise=0.08)
+    c.fill(c.ellipse(8, 8, 2.0, 2.0), p["main"], outline=False)
+    c.dots([(6, 5), (10, 10)], p["second"])
+
+
+def wrap(c, p):
+    body = c.rect(2, 5, 14, 12, r=2)
+    c.fill(body, p["dark"])
+    c.fill(c.rect(2, 4, 4, 13), p["main"], outline=False, glint=False)
+    c.fill(c.rect(12, 4, 14, 13), p["main"], outline=False, glint=False)
+    c.dots([(3, 6), (13, 6)], p["second"])
+    c.line(6, 6, 10, 6, mul(p["dark"], 1.4))
+
+
+def cheese(c, p):
+    wedge = c.poly([(1, 11), (8, 3), (15, 11), (15, 14), (1, 14)])
+    c.fill(wedge, p["main"])
+    c.paint(c.rect(2, 12, 14, 14), p["accent"])
+    c.dots([(6, 8), (9, 6), (11, 10), (5, 11)], mul(p["main"], 0.7))   # holes
+
+
+def bacon(c, p):
+    for y0 in (3, 9):
+        strip = set()
+        for x in range(1, 15):
+            wave = round(1.2 * math.sin(x / 2.2))
+            for y in range(y0 + wave, y0 + wave + 4):
+                strip.add((x, y))
+        c.fill(strip, p["main"], glint=False)
+        for x in range(2, 14):
+            c.dot(x, y0 + 1 + round(1.2 * math.sin(x / 2.2)), p["second"])
+
+
+def eggs(c, p):
+    plate = c.ellipse(8, 9, 7.5, 5.5)
+    c.fill(plate, p["dark"], glint=False, light=0.1, dark=0.15)
+    white = c.ellipse(7, 8, 5.0, 3.5)
+    c.fill(white, p["accent"], outline=True)
+    c.fill(c.ellipse(7, 8, 2.2, 2.0), p["second"])
+    strip = {(x, y) for x in range(10, 15) for y in range(10, 13)}
+    c.fill(strip, p["main"], glint=False)
+
+
+def potato(c, p):
+    body = c.ellipse(8, 9, 6.5, 4.5)
+    c.fill(body, p["main"])
+    c.line(6, 7, 10, 7, p["dark"])                              # split
+    c.dots([(6, 5), (7, 4), (8, 5), (9, 4)], p["second"])          # cream
+    c.dots([(5, 8), (10, 9), (7, 10)], p["accent"])                 # bits
+
+
+def pepper(c, p):
+    body = c.poly([(6, 4), (10, 4), (11, 8), (9, 14), (8, 15), (6, 9)])
+    c.fill(body, p["main"])
+    c.line(8, 1, 8, 4, p["dark"])
+    c.dots([(9, 1), (10, 2)], p["dark"])
+    c.line(7, 5, 7, 11, mul(p["main"], 1.3))
+
+
+def shell(c, p):
+    body = c.ellipse(8, 9, 6.5, 5.5)
+    c.fill(body, p["main"])
+    for r in (4.5, 2.5):
+        ring = c.ellipse(9, 9, r, r - 0.5) - c.ellipse(9, 9, r - 1, r - 1.5)
+        c.paint(ring & body, p["second"])
+    c.dots([(3, 10), (4, 12)], p["accent"])
+
+
+def heart(c, p):
+    m = c.ellipse(5.5, 6, 3.5, 3.2) | c.ellipse(10.5, 6, 3.5, 3.2) | c.poly([(2, 7), (14, 7), (8, 14)])
+    c.fill(m, p["main"])
+    c.dots([(5, 5), (6, 4)], p["accent"])
+    c.dots([(9, 9), (7, 10)], p["second"])
+
+
+def truffle(c, p):
+    body = c.ellipse(8, 9, 5.5, 5.0)
+    c.fill(body, p["main"], noise=0.1)
+    for x, y in ((5, 7), (9, 6), (11, 10), (7, 11), (8, 8)):
+        c.dot(x, y, p["second"])
+    c.dots([(4, 12), (12, 6)], p["accent"])
+
+
+def pudding(c, p):
+    plate = c.ellipse(8, 12, 7.0, 2.5)
+    c.fill(plate, p["accent"], glint=False)
+    body = c.poly([(4, 11), (12, 11), (11, 4), (5, 4)])
+    c.fill(body, p["main"])
+    c.fill(c.ellipse(8, 4.5, 3.6, 1.8), p["second"], outline=False)
+    c.dots([(8, 2)], p["dark"])
+
+
+def meringue(c, p):
+    for cy, r in ((12, 6.0), (9, 4.6), (6, 3.2), (3.5, 1.8)):
+        c.fill(c.ellipse(8, cy, r, r * 0.55 + 0.6), p["main"], noise=0.02)
+    c.dots([(6, 12), (10, 9)], p["second"])
+
+
+def ration(c, p):
+    pouch = c.rect(3, 4, 13, 14, r=2)
+    c.fill(pouch, p["accent"], glint=False)
+    c.paint(c.rect(3, 3, 13, 5), p["dark"])
+    c.fill(c.rect(5, 7, 11, 12), p["second"], outline=False, glint=False)
+    c.dots([(6, 9), (8, 9), (10, 9)], p["main"])
+
+
+def taco(c, p):
+    shell_ = c.ellipse(8, 9, 6.5, 5.5) - c.ellipse(8, 6, 6.5, 3.5)
+    c.fill(shell_, p["main"])
+    c.dots([(5, 6), (7, 5), (9, 5), (11, 6)], p["second"])
+    c.dots([(6, 6), (8, 5), (10, 6)], p["dark"])
 
 
 SHAPES = {
@@ -299,14 +534,14 @@ LOOKS = {
     # meals
     "wagyu_steak": ("steak", "8A3A2A", "C25C42", "F2E6D8", "4A1E14"),
     "bacon": ("bacon", "B23A2E", "F2D3B8", "7A2A1E", "4A1E14"),
-    "bacon_and_eggs": ("eggs", "B23A2E", "F5B231", "F7F3EA", "4A1E14"),
+    "bacon_and_eggs": ("eggs", "B23A2E", "F5B231", "F7F3EA", "D9C7B0"),
     "chicken_nuggets": ("nuggets", "D9A050", "E8C58A", "F7E1A0", "8A5A2B"),
     "fried_chicken": ("drumstick", "B87333", "D9A050", "F2E6D8", "8A5A2B"),
     "roast_lamb": ("steak", "8A5A3A", "B8773B", "5DA33A", "4A2C17"),
     "rabbit_pie": ("pie", "A8743B", "D9A066", "E8C58A", "8A5A2B"),
     "fish_and_chips": ("nuggets", "D9A050", "F2C14E", "F7E1A0", "8A5A2B"),
     "salmon_sushi": ("sushi", "F0855A", "F7F3EA", "F7F3EA", "1F4A2A"),
-    "reef_roll": ("sushi", "F2A02E", "F7F3EA", "2E7BD6", "1F4A2A"),
+    "reef_roll": ("sushi", "F2A02E", "2E7BD6", "F7F3EA", "1F4A2A"),
     "meat_lovers_pizza": ("pizza", "D8402A", "B23A2E", "E8C58A", "5C3A1E"),
     "veggie_stir_fry": ("bowl", "E4782A", "5DA33A", "6E4A2A", "B8773B"),
     "shepherds_pie": ("pie", "E8C58A", "8A5A3A", "D9A050", "5C3A1E"),
@@ -325,8 +560,8 @@ LOOKS = {
     "bone_broth": ("bowl", "D9B98A", "F2E6D8", "6E4A2A", "E4782A"),
     "blaze_stew": ("bowl", "F26A1E", "F5B231", "6E4A2A", "B3243E"),
     # snacks and candy
-    "caramel_apple": ("fruit", "B8773B", "5C3A1E", "B3243E", "5C3A1E"),
-    "candied_carrot": ("pepper", "F2A02E", "5DA33A", "F7E1A0", "1F4A2A"),
+    "caramel_apple": ("fruit", "B8773B", "5DA33A", "B3243E", "5C3A1E"),
+    "candied_carrot": ("pepper", "F2A02E", "5DA33A", "F7E1A0", "1F6A14"),
     "gummy_slime": ("ball", "6BE05A", "9CF58C", "3B8A2E", "2E6A24"),
     "rock_candy": ("crystal", "B58CF2", "E2CCFF", "8A5A2B", "6A3FB5"),
     "red_lollipop": ("lollipop", "F03B3B", "FFFFFF", "F7F3EA", "8A1E1A"),
@@ -334,7 +569,7 @@ LOOKS = {
     "green_lollipop": ("lollipop", "5DFF3B", "FFFFFF", "F7F3EA", "1F6A14"),
     "purple_lollipop": ("lollipop", "B23BFF", "FFFFFF", "F7F3EA", "5A1E8A"),
     "honey_drop": ("drop", "FFC02E", "FFE58A", "D89B2E", "8A5A2B"),
-    "chocolate_bar": ("bar", "5C3A1E", "3B2314", "8A5A2B", "3B2314"),
+    "chocolate_bar": ("bar", "5C3A1E", "3B2314", "B3243E", "3B2314"),
     "trail_mix": ("pile", "C9A46A", "B3243E", "5DA33A", "5C3A1E"),
     "jerky": ("bacon", "6E3A22", "8A4A2A", "4A2C17", "2E1A0E"),
     "popcorn": ("pile", "F7F3EA", "F2C14E", "E8DCC0", "D89B2E"),
@@ -345,19 +580,19 @@ LOOKS = {
     "cherry_blossom_jam": ("jar", "F2A0C0", "F7F3EA", "D9A066", "8A5A2B"),
     "sweet_berry_jam": ("jar", "B3243E", "F7F3EA", "D9A066", "8A5A2B"),
     "glow_berry_jam": ("jar", "F5B231", "F7F3EA", "D9A066", "8A5A2B"),
-    "mushroom_skewer": ("skewer", "C8332A", "B8773B", "8A5A2B", "5C3A1E"),
+    "mushroom_skewer": ("skewer", "C8332A", "B8773B", "8A5A2B", "F7F3EA"),
     "pine_nuts": ("pile", "E8DCC0", "C9A46A", "B8773B", "8A5A2B"),
-    "lotus_root": ("bagel", "F2E6D8", "E8DCC0", "D9B98A", "8A5A2B"),
+    "lotus_root": ("bagel", "F2E6D8", "D9B98A", "D9B98A", "8A5A2B"),
     "seagrass_salad": ("bowl", "3B8A2E", "5DA33A", "6E4A2A", "1F6A14"),
     "wild_honeycomb": ("cheese", "F2A02E", "FFC02E", "D89B2E", "8A5A2B"),
     "cave_cap": ("plant", "F5B231", "FFE58A", "E8DCC0", "B8773B"),
     "warped_fruit": ("fruit", "1FB5A0", "3BD6C6", "2E7BD6", "0E5A50"),
     "crimson_fruit": ("fruit", "B3243E", "F03B3B", "5C1E2A", "6A1424"),
-    "dragon_fruit": ("fruit", "B23BFF", "F2A0C0", "5DA33A", "5A1E8A"),
+    "dragon_fruit": ("fruit", "B23BFF", "5DA33A", "F2A0C0", "5A1E8A"),
     # seafood
     "grilled_squid": ("skewer", "6E5A8A", "F2E6D8", "8A5A2B", "3A2E4A"),
     "glow_squid_skewer": ("skewer", "3BD6C6", "9CF5E8", "8A5A2B", "1FB5A0"),
-    "nautilus_chowder": ("shell", "F2E6D8", "E8DCC0", "B8773B", "6E5A8A"),
+    "nautilus_chowder": ("shell", "F2E6D8", "C9A46A", "B8773B", "6E5A8A"),
     "fried_pufferfish": ("fish", "D9A050", "F2C14E", "F7E1A0", "8A5A2B"),
     "cod_cakes": ("nuggets", "D9A050", "F2E6D8", "F7E1A0", "8A5A2B"),
     "seaweed_wrap": ("wrap", "F0855A", "F7F3EA", "F7F3EA", "1F4A2A"),
@@ -380,76 +615,24 @@ LOOKS = {
     "sculk_truffle": ("truffle", "0E2A3A", "1FB5A0", "3BD6C6", "071A24"),
     "phantom_pudding": ("pudding", "B8D0E0", "F7F3EA", "E8DCC0", "6E7A8A"),
     "dragon_pepper": ("pepper", "F03B3B", "B23BFF", "F7E1A0", "1F6A14"),
-    "golden_sundae": ("pudding", "F7F3EA", "B3243E", "FFD700", "8A5A2B"),
+    "golden_sundae": ("pudding", "F7F3EA", "FFD700", "FFD700", "B3243E"),
     "ancient_grain_loaf": ("loaf", "A8743B", "F2A02E", "E8C58A", "5C3A1E"),
     "deep_sea_delicacy": ("heart", "2E7BD6", "3BD6C6", "F7F3EA", "1E3A8A"),
     "breeze_meringue": ("meringue", "F7F3EA", "B8D0E0", "E8DCC0", "8A8A8A"),
     "trial_ration": ("ration", "B23A2E", "D9A050", "E8DCC0", "5C3A1E"),
     "resin_toffee": ("crystal", "E4782A", "F2A02E", "8A5A2B", "B8632E"),
     "spore_salad": ("plant", "F2A0C0", "5DA33A", "E8DCC0", "3B8A2E"),
-    "torchflower_omelette": ("eggs", "F5B231", "F26A1E", "F7F3EA", "5DA33A"),
+    "torchflower_omelette": ("eggs", "F26A1E", "F5B231", "F7F3EA", "D9C7B0"),
     "celebration_cake": ("cake", "F7F3EA", "F2A0C0", "FFD700", "B3243E"),
 }
 
 
-def hex_rgb(h):
-    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
-
-
-def shade(rgb, f):
-    return tuple(max(0, min(255, int(c * f))) for c in rgb)
-
-
-def texture(food_id, colours):
-    """32x32: four 16x16 dithered swatches, one per role."""
-    rng = random.Random(food_id)
-    img = Image.new("RGBA", (32, 32))
-    px = img.load()
-    for role, (ox, oy) in ROLES.items():
-        base = hex_rgb(colours[role])
-        tones = [shade(base, 0.86), shade(base, 0.93), base, base, shade(base, 1.07)]
-        for y in range(16):
-            for x in range(16):
-                t = rng.choice(tones)
-                # A darker rim on the swatch edge reads as a bevel on every face.
-                if x == 0 or y == 15:
-                    t = shade(t, 0.8)
-                px[ox + x, oy + y] = t + (255,)
-    return img
-
-
-def face_uv(role, w, h):
-    ox, oy = ROLES[role]
-    return [ox, oy, ox + max(1, min(16, w)), oy + max(1, min(16, h))]
-
-
-def model(food_id, shape):
-    elements = []
-    for frm, to, role in SHAPES[shape]():
-        dx, dy, dz = to[0] - frm[0], to[1] - frm[1], to[2] - frm[2]
-        faces = {}
-        for side, (w, h) in {"north": (dx, dy), "south": (dx, dy), "east": (dz, dy), "west": (dz, dy),
-                             "up": (dx, dz), "down": (dx, dz)}.items():
-            faces[side] = {"uv": face_uv(role, w, h), "texture": "#t"}
-        elements.append({"from": frm, "to": to, "faces": faces})
-    return {
-        "credit": "GoldenCarrotBuff, generated by pack.py",
-        "texture_size": [32, 32],
-        "textures": {"t": f"{NS}:item/{food_id}", "particle": f"{NS}:item/{food_id}"},
-        "gui_light": "side",
-        "elements": elements,
-        # Held and drawn like a small block: tilted in the inventory, scaled down in hand.
-        "display": {
-            "gui": {"rotation": [30, 225, 0], "translation": [0, -1, 0], "scale": [0.7, 0.7, 0.7]},
-            "ground": {"translation": [0, 3, 0], "scale": [0.4, 0.4, 0.4]},
-            "fixed": {"rotation": [-90, 0, 0], "scale": [0.6, 0.6, 0.6]},
-            "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 2, 0], "scale": [0.45, 0.45, 0.45]},
-            "firstperson_lefthand": {"rotation": [0, 225, 0], "translation": [0, 2, 0], "scale": [0.45, 0.45, 0.45]},
-            "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
-            "thirdperson_lefthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
-            "head": {"translation": [0, 10, 0], "scale": [1, 1, 1]},
-        },
-    }
+def sprite(food_id):
+    shape, main, second, accent, dark = LOOKS[food_id]
+    palette = {"main": rgb(main), "second": rgb(second), "accent": rgb(accent), "dark": rgb(dark)}
+    canvas = Canvas(food_id)
+    SHAPES[shape](canvas, palette)
+    return canvas.image()
 
 
 def dump(path, data):
@@ -462,8 +645,6 @@ def dump(path, data):
 def main():
     missing = [f["id"] for f in FOODS if f["id"] not in LOOKS]
     assert not missing, "no look for: " + ", ".join(missing)
-    for fid, (shape, *_rest) in LOOKS.items():
-        assert shape in SHAPES, (fid, shape)
 
     if os.path.isdir(PACK):
         shutil.rmtree(PACK)
@@ -471,16 +652,16 @@ def main():
         "pack_format": PACK_FORMAT,
         "min_format": [PACK_FORMAT, 0],
         "max_format": [PACK_FORMAT, 99],
-        "description": "GoldenCarrotBuff: 3D models for the 100 foods"}})
+        "description": "GoldenCarrotBuff: sprites for the 100 foods"}})
 
     for f in FOODS:
         fid = f["id"]
-        shape, main, second, accent, dark = LOOKS[fid]
-        colours = {"main": main, "second": second, "accent": accent, "dark": dark}
         tex_path = os.path.join(ASSETS, "textures", "item", fid + ".png")
         os.makedirs(os.path.dirname(tex_path), exist_ok=True)
-        texture(fid, colours).save(tex_path)
-        dump(os.path.join(ASSETS, "models", "item", fid + ".json"), model(fid, shape))
+        sprite(fid).save(tex_path)
+        # item/generated: the sprite extruded into a thin 3D item, like every vanilla food.
+        dump(os.path.join(ASSETS, "models", "item", fid + ".json"),
+             {"parent": "minecraft:item/generated", "textures": {"layer0": f"{NS}:item/{fid}"}})
         dump(os.path.join(ASSETS, "items", fid + ".json"),
              {"model": {"type": "minecraft:model", "model": f"{NS}:item/{fid}"}})
 
@@ -493,7 +674,7 @@ def main():
     sha1 = hashlib.sha1(open(ZIP, "rb").read()).hexdigest()
     with open(ZIP + ".sha1", "w") as f:
         f.write(sha1 + "\n")
-    print(f"{len(FOODS)} models, {len(SHAPES)} shapes -> {os.path.relpath(ZIP, ROOT)} "
+    print(f"{len(FOODS)} sprites, {len(SHAPES)} shapes -> {os.path.relpath(ZIP, ROOT)} "
           f"({os.path.getsize(ZIP) // 1024} KB) sha1 {sha1}")
 
 
