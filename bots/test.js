@@ -82,6 +82,12 @@ async function main() {
   const bot = await spawnBot(BOT);
   console.log('bot spawned');
   await sleep(1500);
+  // The test world is a slime chunk and it gets dark: no monsters, and daylight,
+  // or the bot is slain halfway through and every later check fails.
+  say('gamerule minecraft:spawn_monsters false');
+  say('gamerule spawn_monsters false');
+  say('time set day');
+  say('kill @e[type=!minecraft:player]');
   say(`gamemode survival ${BOT}`);
   say(`effect clear ${BOT}`);
   say(`clear ${BOT}`);
