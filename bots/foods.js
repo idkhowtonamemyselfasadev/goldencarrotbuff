@@ -105,6 +105,10 @@ async function main() {
   say('gamerule minecraft:spawn_monsters false');
   say('gamerule spawn_monsters false');
   say('time set day');
+  // Killing slimes only splits them, so peaceful for a moment removes them for good.
+  say('difficulty peaceful');
+  await sleep(1500);
+  say('difficulty normal');
   say('kill @e[type=!minecraft:player]');
   say(`gamemode creative ${BOT}`);
   say(`effect clear ${BOT}`);
