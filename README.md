@@ -53,22 +53,24 @@ Soups give the bowl back and drinks give the glass bottle back, like vanilla.
 Drinks are bottles tinted their own colour, candy is tinted too, and everything
 else borrows a vanilla item or block texture that fits.
 
-### The resource pack (custom sprites)
+### The resource pack (3D voxel models)
 
-Every food has its own 16x16 sprite, painted by `pack.py` the way vanilla items
-are: an outlined silhouette, light from the top left, a glint, and details such
-as berries, lattice, grill marks and bubbles on top. The game extrudes the
-sprite into the usual thin 3D item in hand, exactly like a vanilla apple. The
-sprites live in a resource pack the **server hands to every player on join**,
-so nobody installs anything by hand. A preview of all 100 is in
-`release/preview.png`.
+Every food is a real 3D model: `voxel.py` sculpts it from spheres, tori,
+cylinders, cones and rounded boxes on a fine half-unit grid (a donut is a torus,
+an apple a sphere with a stem, a bottle a stack of cylinders with the drink
+inside), colours each part, and merges the voxels into cuboids in Minecraft's
+model format, the same JSON Blockbench and Blender export. About 150 cuboids per
+food. The models live in a resource pack the **server hands to every player on
+join**, so nobody installs anything by hand. A preview of all 100 is in
+`release/preview.png`. `STYLE = "sprite"` in `pack.py` switches to flat
+painted 16x16 sprites instead.
 
 The pack is published on GitHub. Put these lines in the server's
 `server.properties` and restart:
 
 ```
-resource-pack=https://github.com/idkhowtonamemyselfasadev/goldencarrotbuff/releases/download/v1.0.1/goldencarrotbuff-pack.zip
-resource-pack-sha1=f435e2b645736165067baaea59754233f68b8fb2
+resource-pack=https://github.com/idkhowtonamemyselfasadev/goldencarrotbuff/releases/download/v1.0.2/goldencarrotbuff-pack.zip
+resource-pack-sha1=e8a33fe040d3da41da94776753ef20799738e94d
 require-resource-pack=true
 resource-pack-prompt=GoldenCarrotBuff needs its food pack to show the new foods.
 ```
@@ -100,8 +102,9 @@ Operators get `/gcbfood give <players> <food> [count]`, `/gcbfood list` and
 `foods.py` is the single source of truth. Edit it, run `python3 foods.py`, and
 rebuild: it writes the recipe and loot JSON into the jar's datapack, the
 `foods.json` the mod reads, and `FOODS.md`. A new food also needs a shape and
-four colours in `pack.py` (38 painted shapes to pick from, or add one); run
-`python3 pack.py` to rebuild the pack zip and `python3 preview.py` to see it.
+four colours in `pack.py` (38 shapes exist in both `voxel.py` and the sprite
+painter, or add one); run `python3 pack.py` to rebuild the pack zip and
+`python3 preview.py` to see it.
 
 **Players install nothing.** The mod is `environment: server`; everyone joins with
 a vanilla client. The client sends its right-click before it decides for itself
@@ -131,7 +134,7 @@ Verified against a real Fabric 1.21.11 dedicated server, see [Testing](#testing)
 5. Start the server
 
 Both files are also on the GitHub release:
-https://github.com/idkhowtonamemyselfasadev/goldencarrotbuff/releases/tag/v1.0.1
+https://github.com/idkhowtonamemyselfasadev/goldencarrotbuff/releases/tag/v1.0.2
 
 The console prints on start:
 
